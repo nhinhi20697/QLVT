@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\bin\Debug\DXApplication2.exe.config
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\bin\Debug\DXApplication2.exe
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\bin\Debug\DXApplication2.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormDangNhap.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.exe.licenses
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.exe
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormMain.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormNhanvien.resources

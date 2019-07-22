@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Danhsachnhanvien" targetNamespace="http://tempuri.org/Danhsachnhanvien.xsd" xmlns:mstns="http://tempuri.org/Danhsachnhanvien.xsd" xmlns="http://tempuri.org/Danhsachnhanvien.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLVTConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLVTConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.DXApplication2.Properties.Settings.GlobalReference.Default.QLVTConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InDanhSachNhanVienTableAdapter" GeneratorDataComponentClassName="InDanhSachNhanVienTableAdapter" Name="InDanhSachNhanVien" UserDataComponentName="InDanhSachNhanVienTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLVTConnectionString2 (Settings)" DbObjectName="QLVT.dbo.InDanhSachNhanVien" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MANV, HO, TEN, DIACHI, NGAYSINH, LUONG, MACN FROM dbo.InDanhSachNhanVien</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MANV" DataSetColumn="MANV" />
+              <Mapping SourceColumn="HO" DataSetColumn="HO" />
+              <Mapping SourceColumn="TEN" DataSetColumn="TEN" />
+              <Mapping SourceColumn="DIACHI" DataSetColumn="DIACHI" />
+              <Mapping SourceColumn="NGAYSINH" DataSetColumn="NGAYSINH" />
+              <Mapping SourceColumn="LUONG" DataSetColumn="LUONG" />
+              <Mapping SourceColumn="MACN" DataSetColumn="MACN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Danhsachnhanvien" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Danhsachnhanvien" msprop:Generator_UserDSName="Danhsachnhanvien">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="InDanhSachNhanVien" msprop:Generator_TableClassName="InDanhSachNhanVienDataTable" msprop:Generator_TableVarName="tableInDanhSachNhanVien" msprop:Generator_TablePropName="InDanhSachNhanVien" msprop:Generator_RowDeletingName="InDanhSachNhanVienRowDeleting" msprop:Generator_RowChangingName="InDanhSachNhanVienRowChanging" msprop:Generator_RowEvHandlerName="InDanhSachNhanVienRowChangeEventHandler" msprop:Generator_RowDeletedName="InDanhSachNhanVienRowDeleted" msprop:Generator_UserTableName="InDanhSachNhanVien" msprop:Generator_RowChangedName="InDanhSachNhanVienRowChanged" msprop:Generator_RowEvArgName="InDanhSachNhanVienRowChangeEvent" msprop:Generator_RowClassName="InDanhSachNhanVienRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MANV" msprop:Generator_ColumnVarNameInTable="columnMANV" msprop:Generator_ColumnPropNameInRow="MANV" msprop:Generator_ColumnPropNameInTable="MANVColumn" msprop:Generator_UserColumnName="MANV" type="xs:int" />
+              <xs:element name="HO" msprop:Generator_ColumnVarNameInTable="columnHO" msprop:Generator_ColumnPropNameInRow="HO" msprop:Generator_ColumnPropNameInTable="HOColumn" msprop:Generator_UserColumnName="HO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEN" msprop:Generator_ColumnVarNameInTable="columnTEN" msprop:Generator_ColumnPropNameInRow="TEN" msprop:Generator_ColumnPropNameInTable="TENColumn" msprop:Generator_UserColumnName="TEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIACHI" msprop:Generator_ColumnVarNameInTable="columnDIACHI" msprop:Generator_ColumnPropNameInRow="DIACHI" msprop:Generator_ColumnPropNameInTable="DIACHIColumn" msprop:Generator_UserColumnName="DIACHI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYSINH" msprop:Generator_ColumnVarNameInTable="columnNGAYSINH" msprop:Generator_ColumnPropNameInRow="NGAYSINH" msprop:Generator_ColumnPropNameInTable="NGAYSINHColumn" msprop:Generator_UserColumnName="NGAYSINH" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LUONG" msprop:Generator_ColumnVarNameInTable="columnLUONG" msprop:Generator_ColumnPropNameInRow="LUONG" msprop:Generator_ColumnPropNameInTable="LUONGColumn" msprop:Generator_UserColumnName="LUONG" type="xs:double" minOccurs="0" />
+              <xs:element name="MACN" msprop:Generator_ColumnVarNameInTable="columnMACN" msprop:Generator_ColumnPropNameInRow="MACN" msprop:Generator_ColumnPropNameInTable="MACNColumn" msprop:Generator_UserColumnName="MACN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InDanhSachNhanVien" />
+      <xs:field xpath="mstns:MANV" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
