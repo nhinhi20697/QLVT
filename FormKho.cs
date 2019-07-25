@@ -35,8 +35,7 @@ namespace DXApplication2
             this.khoTableAdapter.Fill(this.dS.Kho);
             if (Program.mGroup == "CONGTY")
             {
-                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = false;
-                btnReload.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled =btnReload.Enabled= false;
                 gbKho.Enabled = false;
             }
             else

@@ -76,10 +76,9 @@ namespace DXApplication2
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string temp= DateTime.Now.ToString("d");
-            
-            
+            string temp= DateTime.Now.ToString("d");                       
             txtNgay.Text = temp;
+
             //phieuNhapBindingSource.AddNew();
             //btnReload.Enabled = btnXoa.Enabled = false;
             //txtMaphieunhap.Enabled = txtNgay.Enabled = txtMaDDH.Enabled = txtManv.Enabled = btnOk.Enabled = true;

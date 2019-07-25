@@ -93,7 +93,7 @@
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.Caption = "Nhân viên + DDH";
+            this.btnNhanVien.Caption = "Nhân viên";
             this.btnNhanVien.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Glyph")));
             this.btnNhanVien.Id = 16;
             this.btnNhanVien.Name = "btnNhanVien";

@@ -35,8 +35,13 @@ namespace DXApplication2
             this.cTDDHTableAdapter.Fill(this.dS.CTDDH);
             cbMavt.Enabled = false;
 
-
-
+            if (Program.mGroup == "CONGTY")
+            {
+                btnThem.Enabled = btnXoa.Enabled  = btnReload.Enabled = false;
+                Listthem.Items[0].Visible = false;
+                Listthem.Items[1].Visible = false;
+                Listthem.Items[2].Visible = false;
+            }
         }
 
         private void datHangBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -149,7 +154,10 @@ namespace DXApplication2
             datHangBindingSource.AddNew();
             txtMaddh.Enabled = txtNgay.Enabled = txtNhacungcap.Enabled = cbManv.Enabled = Btnokdh.Enabled = true;
             txtManv.Text = cbManv.Text;
-            txtMaddh.Focus();            
+            txtMaddh.Focus();
+            string temp = DateTime.Now.ToString("d");
+            txtNgay.Text = temp;
+            txtNgay.Enabled = false;
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -194,13 +202,7 @@ namespace DXApplication2
                 }
                 else
                 {
-                    if (txtNgay.Text.Trim() == "")
-                    {
-                        MessageBox.Show("Ngày không được để trống");
-                        txtNgay.Focus();
-                    }
-
-                    else if (txtNhacungcap.Text.Trim() == "")
+                    if (txtNhacungcap.Text.Trim() == "")
                     {
                         MessageBox.Show("Nhà cung cấp không được để trống.");
                         txtNhacungcap.Focus();

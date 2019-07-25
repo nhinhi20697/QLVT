@@ -32,8 +32,7 @@ namespace DXApplication2
             
             if (Program.mGroup == "CONGTY")
             {
-                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = false;
-                btnReload.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled =btnChuyenchinhanh.Enabled=btnReload.Enabled= false;
                 gbNhanvien.Enabled = false;
                
             }
