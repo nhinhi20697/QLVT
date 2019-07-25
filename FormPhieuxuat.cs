@@ -29,6 +29,7 @@ namespace DXApplication2
            
             // TODO: This line of code loads data into the 'qLVTDataSetDSPM.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.qLVTDataSetDSPM.V_DS_PHANMANH);
+            Test.Visible = true;
 
         }
 
@@ -38,6 +39,16 @@ namespace DXApplication2
         }
 
         private void dIACHILabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
         }

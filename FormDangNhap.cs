@@ -96,5 +96,10 @@ namespace DXApplication2
         {
 
         }
+
+        private void cbCoSo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

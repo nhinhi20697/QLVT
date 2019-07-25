@@ -47,14 +47,14 @@
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnChuyenchinhanh = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDathang = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXoaddh = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDathang = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoaddh = new DevExpress.XtraBars.BarButtonItem();
             this.cbChinhanh = new System.Windows.Forms.ComboBox();
             this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVTDataSetDSPM = new DXApplication2.QLVTDataSetDSPM();
@@ -285,22 +285,6 @@
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
-            // btnDathang
-            // 
-            this.btnDathang.Caption = "Thêm DDH";
-            this.btnDathang.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDathang.Glyph")));
-            this.btnDathang.Id = 9;
-            this.btnDathang.Name = "btnDathang";
-            this.btnDathang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
-            // 
-            // btnXoaddh
-            // 
-            this.btnXoaddh.Caption = "Xóa DDH";
-            this.btnXoaddh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnXoaddh.Glyph")));
-            this.btnXoaddh.Id = 10;
-            this.btnXoaddh.Name = "btnXoaddh";
-            this.btnXoaddh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoaddh_ItemClick);
-            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -347,6 +331,22 @@
             this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
             this.barButtonItem4.Id = 5;
             this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // btnDathang
+            // 
+            this.btnDathang.Caption = "Thêm DDH";
+            this.btnDathang.Glyph = ((System.Drawing.Image)(resources.GetObject("btnDathang.Glyph")));
+            this.btnDathang.Id = 9;
+            this.btnDathang.Name = "btnDathang";
+            this.btnDathang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // btnXoaddh
+            // 
+            this.btnXoaddh.Caption = "Xóa DDH";
+            this.btnXoaddh.Glyph = ((System.Drawing.Image)(resources.GetObject("btnXoaddh.Glyph")));
+            this.btnXoaddh.Id = 10;
+            this.btnXoaddh.Name = "btnXoaddh";
+            this.btnXoaddh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoaddh_ItemClick);
             // 
             // cbChinhanh
             // 

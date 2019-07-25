@@ -145,6 +145,7 @@
             this.cbCoSo.Size = new System.Drawing.Size(182, 29);
             this.cbCoSo.TabIndex = 1;
             this.cbCoSo.ValueMember = "TENSERVER";
+            this.cbCoSo.SelectedIndexChanged += new System.EventHandler(this.cbCoSo_SelectedIndexChanged);
             // 
             // bdsDSPM
             // 

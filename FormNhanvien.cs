@@ -29,8 +29,7 @@ namespace DXApplication2
 
             this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
             this.nhanVienTableAdapter.Fill(this.dS.NhanVien);
-            this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.datHangTableAdapter.Fill(this.dS.DatHang);
+            
             if (Program.mGroup == "CONGTY")
             {
                 btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = false;
@@ -82,8 +81,8 @@ namespace DXApplication2
         {
             btnReload.Enabled = btnXoa.Enabled = btnThoat.Enabled = btnThem.Enabled = btnChuyenchinhanh.Enabled = btnXoaddh.Enabled = btnDathang.Enabled = false;
             nhanVienTableAdapter.Update(dS.NhanVien);
-            datHangTableAdapter.Update(dS.DatHang);
-            //nhanVienTableAdapter.Fill(dS.NhanVien);
+           
+            
             MessageBox.Show("Ghi thành công", "Thông báo");
             btnReload.Enabled = btnXoa.Enabled = btnThoat.Enabled = btnThem.Enabled = btnChuyenchinhanh.Enabled = btnXoaddh.Enabled = btnDathang.Enabled = true;
         }
@@ -241,7 +240,7 @@ namespace DXApplication2
         {
             btnXoa.Enabled = btnThoat.Enabled = btnThem.Enabled = btnGhi.Enabled = btnChuyenchinhanh.Enabled = btnDathang.Enabled = btnXoaddh.Enabled = false;
             this.nhanVienTableAdapter.Fill(this.dS.NhanVien);
-            this.datHangTableAdapter.Fill(this.dS.DatHang);
+            
             MessageBox.Show("Cập nhật danh sách thành công", "Thông báo");
             btnXoa.Enabled = btnThoat.Enabled = btnThem.Enabled = btnGhi.Enabled = btnChuyenchinhanh.Enabled = btnDathang.Enabled = btnXoaddh.Enabled = true;
         }

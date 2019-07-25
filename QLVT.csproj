@@ -111,8 +111,18 @@
     <Compile Include="FormPhieuxuat.Designer.cs">
       <DependentUpon>FormPhieuxuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="InDanhSachMaVatTu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InDanhSachMaVatTu.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLVTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLVTDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLVTDataSetDSPM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,6 +164,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Vattu.resx">
       <DependentUpon>Vattu.cs</DependentUpon>
@@ -181,6 +192,17 @@
     <None Include="DS.xss">
       <DependentUpon>DS.xsd</DependentUpon>
     </None>
+    <None Include="InDanhSachMaVatTu.xsc">
+      <DependentUpon>InDanhSachMaVatTu.xsd</DependentUpon>
+    </None>
+    <None Include="InDanhSachMaVatTu.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InDanhSachMaVatTu.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InDanhSachMaVatTu.xss">
+      <DependentUpon>InDanhSachMaVatTu.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,6 +212,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLVTDataSet.xsc">
+      <DependentUpon>QLVTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLVTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLVTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLVTDataSet.xss">
+      <DependentUpon>QLVTDataSet.xsd</DependentUpon>
+    </None>
     <None Include="QLVTDataSetDSPM.xsc">
       <DependentUpon>QLVTDataSetDSPM.xsd</DependentUpon>
     </None>
@@ -201,6 +234,18 @@
     <None Include="QLVTDataSetDSPM.xss">
       <DependentUpon>QLVTDataSetDSPM.xsd</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baogia.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baogia1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-sign-rotation-icon-reload-symbol-vector-13939029.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
