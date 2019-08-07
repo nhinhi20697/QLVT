@@ -37,13 +37,13 @@ namespace DXApplication2
             this.vattuTableAdapter.Fill(this.dS.Vattu);
             if (Program.mGroup == "CONGTY")
             {
-                btnThem.Enabled = btnXoa.Enabled = btnUndo.Enabled = btnGhi.Enabled =  false;
-                btnReload.Enabled = false;
-                textDvt.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnReload.Enabled =btnExit.Enabled= btnHuy.Enabled=false;
+                gbVattu.Enabled = false;
             }
             else
             {
-                 textDvt.Enabled = false;
+                btnHuy.Enabled = false;
+                 gbVattu.Enabled = false;
             }
 
         }
@@ -56,8 +56,11 @@ namespace DXApplication2
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vattuBindingSource.AddNew();
-            textDvt.Enabled = true;                
-            btnGhi.Enabled = btnReload.Enabled = btnUndo.Enabled = btnXoa.Enabled = false;
+            gbVattu.Enabled = true;                
+            btnGhi.Enabled = btnReload.Enabled = btnUndo.Enabled = btnXoa.Enabled =btnExit.Enabled=btnThem.Enabled= false;
+            btnHuy.Enabled = true;
+            txtSlt.Text = 0+"";
+            txtSlt.Enabled = false;
             txtMavt.Focus();
         }
 
@@ -70,9 +73,10 @@ namespace DXApplication2
             }
             else
             {
+
                 SqlDataReader myReader;
                 String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraMaVatTuTonTai] " +
-                    "@MAVT = N'" + txtMavt.Text + "' SELECT  'Return Value' = @return_value";
+                    "@MAVT = N'" + txtMavt.Text.Trim() + "' SELECT  'Return Value' = @return_value";
                 myReader = Program.ExecSqlDataReader(strlenh);
                 if (myReader == null) return;
                 myReader.Read();
@@ -117,17 +121,15 @@ namespace DXApplication2
                                 MessageBox.Show("Đơn vị tính không được để trống");
                                 txtDvt.Focus();
 
-                            }
-                            else if (txtSlt.Text.Trim() == "")
-                            {
-                                MessageBox.Show("Số lượng tồn không được để trống");
-                                txtSlt.Focus();
-
-                            }
+                            }                          
                         }
+                        txtMavt.Text.Trim();
                         vattuBindingSource.EndEdit();
                         bdsVattu.Enabled = true;
-                        btnExit.Enabled = btnGhi.Enabled = btnReload.Enabled = btnUndo.Enabled = btnXoa.Enabled = true;
+                        gbVattu.Enabled = false;
+                        btnExit.Enabled = btnGhi.Enabled = btnReload.Enabled = btnUndo.Enabled = btnXoa.Enabled =btnThem.Enabled= true;
+                        btnHuy.Enabled = false;
+                        
                         vattuTableAdapter.Update(dS.Vattu);
                         vattuTableAdapter.Fill(dS.Vattu);
                     }
@@ -139,7 +141,7 @@ namespace DXApplication2
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             btnReload.Enabled = btnUndo.Enabled = btnGhi.Enabled = btnExit.Enabled=btnThem.Enabled = false;
-            textDvt.Enabled = false;
+            gbVattu.Enabled = false;
 
             DialogResult dr = MessageBox.Show("Bạn có chắc chắc muốn xóa", "Xóa vật tư", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             
@@ -157,7 +159,7 @@ namespace DXApplication2
                 {
                     MessageBox.Show("Mã vật tư đã tồn tại trong CTPN,CTPX,CTDDH. Không thể xóa.", "Thông báo");
                     btnReload.Enabled = btnUndo.Enabled = btnGhi.Enabled = btnExit.Enabled = btnThem.Enabled = true;
-                    textDvt.Enabled = true;
+                   
                     return;
                 }
                 else
@@ -165,7 +167,7 @@ namespace DXApplication2
                     vattuBindingSource.RemoveCurrent();
                     vattuTableAdapter.Update(dS.Vattu);
                     btnReload.Enabled = btnUndo.Enabled = btnGhi.Enabled = btnExit.Enabled = btnThem.Enabled = true;
-                    textDvt.Enabled = true;
+                    
                 }
 
                
@@ -173,19 +175,19 @@ namespace DXApplication2
             else
             {
                 btnReload.Enabled = btnUndo.Enabled = btnGhi.Enabled = btnExit.Enabled = btnThem.Enabled = true;
-                textDvt.Enabled = true;
+                gbVattu.Enabled = true;
             }
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             btnReload.Enabled = btnUndo.Enabled = btnXoa.Enabled = btnExit.Enabled = btnThem.Enabled = false;
-            textDvt.Enabled = false;
+            gbVattu.Enabled = false;
             vattuTableAdapter.Update(dS.Vattu);
             vattuTableAdapter.Fill(dS.Vattu);
             MessageBox.Show("Cập nhật danh sách thành công", "Thông báo");
             btnReload.Enabled = btnUndo.Enabled = btnXoa.Enabled = btnExit.Enabled = btnThem.Enabled = true;
-            textDvt.Enabled = false;
+            gbVattu.Enabled = false;
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -238,6 +240,18 @@ namespace DXApplication2
         private void sOLUONGTONLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gbVattu.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnReload.Enabled = btnExit.Enabled  = true;
+            btnHuy.Enabled = false;
+
+            vattuBindingSource.CancelEdit();
+            vattuBindingSource.EndEdit();
+
+            vattuTableAdapter.Fill(dS.Vattu);
         }
     }
 }

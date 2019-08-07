@@ -26,10 +26,10 @@ namespace DXApplication2
             cbCoSo.SelectedIndex = 1; // chọn dòng số 2
             cbCoSo.SelectedIndex = 0;
         }
-        
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+
             if (txtLogin.Text.Trim() == "")
             {
                 MessageBox.Show("Tài khoản đăng nhập không được rỗng. Kiểm tra lại !", "Báo lỗi đăng nhập", MessageBoxButtons.OK);
@@ -45,6 +45,7 @@ namespace DXApplication2
             else
             {
                 Program.servername = cbCoSo.SelectedValue.ToString();
+
                 Program.mlogin = txtLogin.Text;
                 Program.password = txtPass.Text;
 
@@ -55,27 +56,28 @@ namespace DXApplication2
                     Program.bds_dspm = this.bdsDSPM;
                     Program.mloginDN = Program.mlogin;
                     Program.passwordDN = Program.password;
+                  
                     Program.mCoSo = cbCoSo.SelectedIndex;
                     SqlDataReader myReader;
-                        string strlenh = "EXEC SP_DANGNHAP '" + Program.mlogin + "'";
-                        myReader = Program.ExecSqlDataReader(strlenh);
-                        if (myReader == null) return;
-                        myReader.Read();
-                        Program.username = myReader.GetString(0);
-                        Program.mHoten = myReader.GetString(1);
-                        Program.mGroup = myReader.GetString(2);
-                        myReader.Close();
-                        FormMain frMain = new FormMain();
-                        frMain.MANV.Text ="Mã nhân viên : "+ Program.username;
-                        frMain.HOTEN.Text = "Họ và tên : " + Program.mHoten;
-                        frMain.NHOM.Text = "Nhóm quyền : " + Program.mGroup;
-                        frMain.Show();
-                        this.Hide();
+                    string strlenh = "EXEC SP_DANGNHAP '" + Program.mlogin + "'";
+                    myReader = Program.ExecSqlDataReader(strlenh);
+                    if (myReader == null) return;
+                    myReader.Read();
+                    Program.username = myReader.GetString(0);
+                    Program.mHoten = myReader.GetString(1);
+                    Program.mGroup = myReader.GetString(2);
+                    myReader.Close();
+                    FormMain frMain = new FormMain();
+                    frMain.MANV.Text = "Mã nhân viên : " + Program.username;
+                    frMain.HOTEN.Text = "Họ và tên : " + Program.mHoten;
+                    frMain.NHOM.Text = "Nhóm quyền : " + Program.mGroup;
+                    frMain.Show();
+                    this.Hide();
                 }
             }
-           
+
         }
-        
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {

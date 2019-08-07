@@ -13,7 +13,7 @@ namespace DXApplication2
     {
         public static FormDangNhap frDangNhap;
         public static FormMain frmMain;
-
+        
 
         public static SqlConnection conn = new SqlConnection();
 
@@ -98,7 +98,6 @@ namespace DXApplication2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             frDangNhap = new FormDangNhap();

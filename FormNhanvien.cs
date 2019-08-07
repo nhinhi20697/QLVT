@@ -32,13 +32,13 @@ namespace DXApplication2
             
             if (Program.mGroup == "CONGTY")
             {
-                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled =btnChuyenchinhanh.Enabled=btnReload.Enabled= false;
+                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled =btnChuyenchinhanh.Enabled=btnReload.Enabled=btnThoat.Enabled=btnHuy.Enabled= false;
                 gbNhanvien.Enabled = false;
                
             }
             else
             {
-                cbChinhanh.Enabled = false;
+                cbChinhanh.Enabled =btnHuy.Enabled= false;
                 gbNhanvien.Enabled = false;
                
             }
@@ -95,7 +95,8 @@ namespace DXApplication2
         {
 
             nhanVienBindingSource.AddNew();
-            btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = btnChuyenchinhanh.Enabled = btnDathang.Enabled = btnXoaddh.Enabled = false;
+            btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = btnChuyenchinhanh.Enabled = btnXoaddh.Enabled= btnThem.Enabled=btnThoat.Enabled= false;
+            btnHuy.Enabled = true;
             gbNhanvien.Enabled = true;
 
             if (Program.mCoSo == 0)
@@ -177,7 +178,8 @@ namespace DXApplication2
                                 else
                                 {
                                     nhanVienBindingSource.EndEdit();
-                                    btnThoat.Enabled = btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = btnChuyenchinhanh.Enabled = btnXoaddh.Enabled = btnDathang.Enabled = true;
+                                    btnThoat.Enabled = btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = btnChuyenchinhanh.Enabled =btnThem.Enabled = true;
+                                    btnHuy.Enabled = false;
                                     nhanVienTableAdapter.Update(dS.NhanVien);
                                     nhanVienTableAdapter.Fill(dS.NhanVien);
                                     bdsNhanvien.Enabled = true;
@@ -377,105 +379,32 @@ namespace DXApplication2
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //datHangBindingSource.AddNew();
-            //gbDdh.Enabled = true;
-
-            //txtManvddh.Text = txtManv.Text;
-            //txtManvddh.Enabled = false;
-            //txtMaddh.Focus();
+ 
         }
 
         private void btnOkDdh_Click(object sender, EventArgs e)
         {
-            //if (txtMaddh.Text.Trim() == "")
-            //{
-            //    MessageBox.Show("Mã đơn đặt hàng không được để trống. Kiểm tra lại !!!", "Thông báo");
-            //    txtMaddh.Focus();
-            //}
-            //else
-            //{
-            //    SqlDataReader myReader;
-            //    String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraMaDDH] " +
-            //        "@MADDH = N'" + txtMaddh.Text + "' SELECT  'Return Value' = @return_value";
-            //    myReader = Program.ExecSqlDataReader(strlenh);
-            //    if (myReader == null) return;
-            //    myReader.Read();
-            //    int value = myReader.GetInt32(0);
-
-            //    myReader.Close();
-
-            //    if (value == 1)
-            //    {
-            //        MessageBox.Show("Mã đơn đặt hàng đã tồn tại. Kiểm tra lại !!!", "Thông báo");
-            //        txtMaddh.Focus();
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        if (txtNgay.Text.Trim() == "")
-            //        {
-            //            MessageBox.Show("Ngày đặt hàng không được để trống. Kiểm tra lại !!!", "Thông báo");
-            //            txtNgay.Focus();
-
-            //        }
-            //        else if (txtNhacungcap.Text.Trim() == "")
-            //        {
-            //            MessageBox.Show("Nhà cung cấp không được để trống. Kiểm tra lại !!!", "Thông báo");
-            //            txtNhacungcap.Focus();
-
-            //        }
-            //        else
-            //        {
-            //            datHangBindingSource.EndEdit();
-            //            datHangTableAdapter.Update(dS.DatHang);
-            //            datHangTableAdapter.Fill(dS.DatHang);
-            //            gbDdh.Enabled = false;
-            //        }
-            //    }
-            //}
+           
         }
 
         private void btnXoaddh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //btnReload.Enabled = btnGhi.Enabled = btnThoat.Enabled = btnThem.Enabled = btnChuyenchinhanh.Enabled = btnXoa.Enabled = btnDathang.Enabled = false;
-
-            //DialogResult dr = MessageBox.Show("Bạn có chắc chắc muốn xóa", "Xóa đơn đặt hàng.", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-
-            //if (dr == DialogResult.Yes)
-            //{
-            //    SqlDataReader myReader1;
-            //    String strlenh1 = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraXoaDonDatHang] " +
-            //            "@MADDH = N'" + txtMaddh.Text + "' SELECT  'Return Value' = @return_value";
-            //    myReader1 = Program.ExecSqlDataReader(strlenh1);
-
-            //    if (myReader1 == null) return;
-
-            //    myReader1.Read();
-            //    int value1 = myReader1.GetInt32(0);
-
-            //    myReader1.Close();
-
-            //    if (value1 == 1)
-            //    {
-            //        MessageBox.Show("Không thể xóa đơn đặt hàng này.");
-            //    }
-            //    else
-            //    {
-            //        datHangBindingSource.RemoveCurrent();
-            //    }
-            //    btnReload.Enabled = btnGhi.Enabled = btnThoat.Enabled = btnThem.Enabled = btnChuyenchinhanh.Enabled = btnXoa.Enabled = btnDathang.Enabled = true;
-
-            //}
-            //else
-            //{
-            //    btnReload.Enabled = btnGhi.Enabled = btnThoat.Enabled = btnThem.Enabled = btnChuyenchinhanh.Enabled = btnXoa.Enabled = btnDathang.Enabled = true;
-
-            //}
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gbNhanvien.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnReload.Enabled = btnThoat.Enabled =btnChuyenchinhanh.Enabled= true;
+            btnHuy.Enabled = false;
+            nhanVienBindingSource.CancelEdit();
+            nhanVienBindingSource.EndEdit();
+            nhanVienTableAdapter.Fill(dS.NhanVien);
         }
     }
 }

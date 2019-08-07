@@ -35,13 +35,14 @@ namespace DXApplication2
             this.khoTableAdapter.Fill(this.dS.Kho);
             if (Program.mGroup == "CONGTY")
             {
-                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled =btnReload.Enabled= false;
+                btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled =btnReload.Enabled=btnExit.Enabled=btnHuy.Enabled= false;
                 gbKho.Enabled = false;
             }
             else
             {
                 panelChinhanh.Enabled = false;
                 gbKho.Enabled = false;
+                btnHuy.Enabled = false;
             }
 
         }
@@ -55,7 +56,8 @@ namespace DXApplication2
         {
            
             khoBindingSource.AddNew();
-            btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = false;
+            btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled =btnExit.Enabled=btnThem.Enabled= false;
+            btnHuy.Enabled = true;
             gbKho.Enabled = true;
 
             if (Program.mCoSo == 0)
@@ -82,7 +84,7 @@ namespace DXApplication2
             {
                 SqlDataReader myReader;
                 String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraMaKhoTonTai] " +
-                    "@MAKHO = N'" + txtMakho.Text + "' SELECT  'Return Value' = @return_value";
+                    "@MAKHO = N'" + txtMakho.Text.Trim() + "' SELECT  'Return Value' = @return_value";
                 myReader = Program.ExecSqlDataReader(strlenh);
                 if (myReader == null) return;
                 myReader.Read();
@@ -107,7 +109,7 @@ namespace DXApplication2
                     {
                         SqlDataReader myReader1;
                         String strlenh1 = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraTenKhoTonTai] " +
-                            "@TENKHO = N'" + txtTenkho.Text + "' SELECT  'Return Value' = @return_value";
+                            "@TENKHO = N'" + txtTenkho.Text.Trim() + "' SELECT  'Return Value' = @return_value";
                         myReader1 = Program.ExecSqlDataReader(strlenh1);
                         if (myReader1 == null) return;
                         myReader1.Read();
@@ -130,6 +132,7 @@ namespace DXApplication2
                             }
                             else
                             {
+                                txtMakho.Text.Trim();
                                 khoBindingSource.EndEdit();
 
                                 btnExit.Enabled = btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = true;
@@ -137,6 +140,7 @@ namespace DXApplication2
                                 khoTableAdapter.Fill(dS.Kho);
                                 bdsKho.Enabled = true;
                                 gbKho.Enabled = false;
+                                btnHuy.Enabled = false;
                             }
                         }
 
@@ -166,10 +170,10 @@ namespace DXApplication2
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnReload.Enabled = btnXoa.Enabled = btnExit.Enabled = btnThem.Enabled = false; 
+            btnGhi.Enabled = btnXoa.Enabled = btnExit.Enabled = btnThem.Enabled = false; 
             this.khoTableAdapter.Fill(this.dS.Kho);
             MessageBox.Show("Cập nhật danh sách thành công", "Thông báo");
-            btnReload.Enabled = btnXoa.Enabled = btnExit.Enabled = btnThem.Enabled = true;
+            btnGhi.Enabled = btnXoa.Enabled = btnExit.Enabled = btnThem.Enabled = true;
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -220,6 +224,18 @@ namespace DXApplication2
 
                 }
             }
+        }
+
+        private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gbKho.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnGhi.Enabled = btnReload.Enabled = btnExit.Enabled = true;
+            btnHuy.Enabled = false;
+
+            khoBindingSource.CancelEdit();
+            khoBindingSource.EndEdit();
+
+            khoTableAdapter.Fill(dS.Kho);
         }
     }
 }

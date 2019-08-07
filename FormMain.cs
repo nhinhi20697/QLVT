@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace DXApplication2
         {
             InitializeComponent();
         }
+
         //Kiểm tra form tồn tại chưa?
         private Form CheckExists(Type ftype)
         {
@@ -40,10 +42,6 @@ namespace DXApplication2
                 f.Show();
             }
 
-            if(Program.mGroup=="USER")
-            {
-                
-            }
 
         }
 
@@ -76,7 +74,7 @@ namespace DXApplication2
         {
             Program.frDangNhap.Show();
             Close();
-            
+
         }
 
         private void btnDondathang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -123,6 +121,82 @@ namespace DXApplication2
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             Program.frDangNhap.Show();
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Program.mGroup == "USER")
+            {
+                MessageBox.Show("Bạn không được xem báo cáo.Kiểm tra lại.");
+               
+            }
+            else
+            {
+                Form frm = this.CheckExists(typeof(FormInDanhSachNhanVien));
+                if (frm != null) frm.Activate();
+                else
+                {
+                    FormInDanhSachNhanVien f = new FormInDanhSachNhanVien();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+
+
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Program.mGroup == "USER")
+            {
+                MessageBox.Show("Bạn không được xem báo cáo.Kiểm tra lại.");
+
+            }
+            else
+            {
+                InDanhSachVatTuTheoTen vt = new InDanhSachVatTuTheoTen();
+                ReportPrintTool invt = new ReportPrintTool(vt);
+                invt.ShowPreviewDialog();
+            }
+           
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (Program.mGroup == "USER")
+            {
+                MessageBox.Show("Bạn không được xem báo cáo.Kiểm tra lại.");
+
+            }
+            else
+            {
+                Form frm = this.CheckExists(typeof(FormInDanhSachDDHChuaCoPN));
+                if (frm != null) frm.Activate();
+                else
+                {
+                    FormInDanhSachDDHChuaCoPN f = new FormInDanhSachDDHChuaCoPN();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }                           
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.frDangNhap.Show();
+            Close();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormTaoTK));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormTaoTK f = new FormTaoTK();
+                f.MdiParent = this;
+                f.Show();
+            }
         }
     }
 }

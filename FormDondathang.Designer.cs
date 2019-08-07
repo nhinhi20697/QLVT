@@ -45,6 +45,7 @@
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -55,6 +56,11 @@
             this.qLVTDataSetDSPM = new DXApplication2.QLVTDataSetDSPM();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bdsCtddh = new DevExpress.XtraGrid.GridControl();
+            this.Listthem = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.đặtHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnXoavattu = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hủyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cTDDHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new DXApplication2.DS();
@@ -81,13 +87,12 @@
             this.txtMactddh = new DevExpress.XtraEditors.TextEdit();
             this.gbDathang = new System.Windows.Forms.GroupBox();
             this.Btnokdh = new System.Windows.Forms.Button();
-            this.cbManv = new System.Windows.Forms.ComboBox();
-            this.sp_InDanhSachNhanVienDangLamViecBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVTDataSet = new DXApplication2.QLVTDataSet();
             this.txtManv = new DevExpress.XtraEditors.SpinEdit();
             this.txtNhacungcap = new DevExpress.XtraEditors.TextEdit();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.txtMaddh = new DevExpress.XtraEditors.TextEdit();
+            this.sp_InDanhSachNhanVienDangLamViecBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVTDataSet = new DXApplication2.QLVTDataSet();
             this.datHangTableAdapter = new DXApplication2.DSTableAdapters.DatHangTableAdapter();
             this.tableAdapterManager = new DXApplication2.DSTableAdapters.TableAdapterManager();
             this.cTDDHTableAdapter = new DXApplication2.DSTableAdapters.CTDDHTableAdapter();
@@ -98,10 +103,6 @@
             this.tableAdapterManager2 = new DXApplication2.QLVTDataSetTableAdapters.TableAdapterManager();
             this.sp_InDanhSachMaVatTuTableAdapter = new DXApplication2.InDanhSachMaVatTuTableAdapters.sp_InDanhSachMaVatTuTableAdapter();
             this.tableAdapterManager3 = new DXApplication2.InDanhSachMaVatTuTableAdapters.TableAdapterManager();
-            this.Listthem = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.đặtHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnXoavattu = new System.Windows.Forms.ToolStripMenuItem();
-            this.reloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             masoDDHLabel = new System.Windows.Forms.Label();
             nGAYLabel = new System.Windows.Forms.Label();
             nhaCCLabel = new System.Windows.Forms.Label();
@@ -117,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSetDSPM)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCtddh)).BeginInit();
+            this.Listthem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
@@ -132,14 +134,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMavt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMactddh.Properties)).BeginInit();
             this.gbDathang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtManv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhacungcap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaddh.Properties)).BeginInit();
-            this.Listthem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // masoDDHLabel
@@ -237,9 +238,10 @@
             this.btnThem,
             this.btnXoa,
             this.btnReload,
-            this.btnExit});
+            this.btnExit,
+            this.btnHuy});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 4;
+            this.barManager1.MaxItemId = 5;
             // 
             // bar2
             // 
@@ -251,7 +253,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnExit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnExit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHuy, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -287,6 +290,14 @@
             this.btnExit.Id = 3;
             this.btnExit.Name = "btnExit";
             this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Caption = "Hủy";
+            this.btnHuy.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHuy.Glyph")));
+            this.btnHuy.Id = 4;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -361,6 +372,7 @@
             // 
             // bdsCtddh
             // 
+            this.bdsCtddh.ContextMenuStrip = this.Listthem;
             this.bdsCtddh.DataSource = this.cTDDHBindingSource;
             this.bdsCtddh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bdsCtddh.Location = new System.Drawing.Point(523, 0);
@@ -371,6 +383,48 @@
             this.bdsCtddh.TabIndex = 1;
             this.bdsCtddh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            // 
+            // Listthem
+            // 
+            this.Listthem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đặtHàngToolStripMenuItem,
+            this.btnXoavattu,
+            this.reloadToolStripMenuItem,
+            this.hủyToolStripMenuItem});
+            this.Listthem.Name = "nhi";
+            this.Listthem.Size = new System.Drawing.Size(139, 92);
+            // 
+            // đặtHàngToolStripMenuItem
+            // 
+            this.đặtHàngToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.online_store;
+            this.đặtHàngToolStripMenuItem.Name = "đặtHàngToolStripMenuItem";
+            this.đặtHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.đặtHàngToolStripMenuItem.Text = "Thêm vật tư";
+            this.đặtHàngToolStripMenuItem.Click += new System.EventHandler(this.đặtHàngToolStripMenuItem_Click);
+            // 
+            // btnXoavattu
+            // 
+            this.btnXoavattu.Image = global::DXApplication2.Properties.Resources.baogia1;
+            this.btnXoavattu.Name = "btnXoavattu";
+            this.btnXoavattu.Size = new System.Drawing.Size(152, 22);
+            this.btnXoavattu.Text = "Xóa vật tư";
+            this.btnXoavattu.Click += new System.EventHandler(this.chiTiếtĐơnĐặtHàngToolStripMenuItem_Click);
+            // 
+            // reloadToolStripMenuItem
+            // 
+            this.reloadToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.arrow_sign_rotation_icon_reload_symbol_vector_13939029;
+            this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reloadToolStripMenuItem.Text = "Reload";
+            this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
+            // 
+            // hủyToolStripMenuItem
+            // 
+            this.hủyToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.back;
+            this.hủyToolStripMenuItem.Name = "hủyToolStripMenuItem";
+            this.hủyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hủyToolStripMenuItem.Text = "Hủy";
+            this.hủyToolStripMenuItem.Click += new System.EventHandler(this.hủyToolStripMenuItem_Click);
             // 
             // cTDDHBindingSource
             // 
@@ -456,6 +510,7 @@
             this.colMANV});
             this.gridView1.GridControl = this.bdsDathang;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowDetailButtons = false;
             // 
             // colMasoDDH
             // 
@@ -618,7 +673,6 @@
             // 
             this.gbDathang.Controls.Add(this.Btnokdh);
             this.gbDathang.Controls.Add(mANVLabel1);
-            this.gbDathang.Controls.Add(this.cbManv);
             this.gbDathang.Controls.Add(this.txtManv);
             this.gbDathang.Controls.Add(nhaCCLabel);
             this.gbDathang.Controls.Add(this.txtNhacungcap);
@@ -637,6 +691,7 @@
             // Btnokdh
             // 
             this.Btnokdh.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Btnokdh.Enabled = false;
             this.Btnokdh.Location = new System.Drawing.Point(306, 84);
             this.Btnokdh.Name = "Btnokdh";
             this.Btnokdh.Size = new System.Drawing.Size(75, 32);
@@ -644,29 +699,6 @@
             this.Btnokdh.Text = "OK";
             this.Btnokdh.UseVisualStyleBackColor = false;
             this.Btnokdh.Click += new System.EventHandler(this.Btnokdh_Click);
-            // 
-            // cbManv
-            // 
-            this.cbManv.DataSource = this.sp_InDanhSachNhanVienDangLamViecBindingSource;
-            this.cbManv.DisplayMember = "MANV";
-            this.cbManv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbManv.Enabled = false;
-            this.cbManv.FormattingEnabled = true;
-            this.cbManv.Location = new System.Drawing.Point(95, 138);
-            this.cbManv.Name = "cbManv";
-            this.cbManv.Size = new System.Drawing.Size(73, 21);
-            this.cbManv.TabIndex = 10;
-            this.cbManv.SelectedIndexChanged += new System.EventHandler(this.cbManv_SelectedIndexChanged);
-            // 
-            // sp_InDanhSachNhanVienDangLamViecBindingSource
-            // 
-            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataMember = "sp_InDanhSachNhanVienDangLamViec";
-            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataSource = this.qLVTDataSet;
-            // 
-            // qLVTDataSet
-            // 
-            this.qLVTDataSet.DataSetName = "QLVTDataSet";
-            this.qLVTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtManv
             // 
@@ -677,12 +709,12 @@
             0,
             0});
             this.txtManv.Enabled = false;
-            this.txtManv.Location = new System.Drawing.Point(186, 139);
+            this.txtManv.Location = new System.Drawing.Point(95, 139);
             this.txtManv.MenuManager = this.barManager1;
             this.txtManv.Name = "txtManv";
             this.txtManv.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtManv.Size = new System.Drawing.Size(66, 20);
+            this.txtManv.Size = new System.Drawing.Size(157, 20);
             this.txtManv.TabIndex = 7;
             // 
             // txtNhacungcap
@@ -719,6 +751,16 @@
             this.txtMaddh.Name = "txtMaddh";
             this.txtMaddh.Size = new System.Drawing.Size(157, 20);
             this.txtMaddh.TabIndex = 1;
+            // 
+            // sp_InDanhSachNhanVienDangLamViecBindingSource
+            // 
+            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataMember = "sp_InDanhSachNhanVienDangLamViec";
+            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataSource = this.qLVTDataSet;
+            // 
+            // qLVTDataSet
+            // 
+            this.qLVTDataSet.DataSetName = "QLVTDataSet";
+            this.qLVTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // datHangTableAdapter
             // 
@@ -773,45 +815,11 @@
             this.tableAdapterManager3.Connection = null;
             this.tableAdapterManager3.UpdateOrder = DXApplication2.InDanhSachMaVatTuTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // Listthem
-            // 
-            this.Listthem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đặtHàngToolStripMenuItem,
-            this.btnXoavattu,
-            this.reloadToolStripMenuItem});
-            this.Listthem.Name = "nhi";
-            this.Listthem.Size = new System.Drawing.Size(139, 70);
-            // 
-            // đặtHàngToolStripMenuItem
-            // 
-            this.đặtHàngToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.online_store;
-            this.đặtHàngToolStripMenuItem.Name = "đặtHàngToolStripMenuItem";
-            this.đặtHàngToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.đặtHàngToolStripMenuItem.Text = "Thêm vật tư";
-            this.đặtHàngToolStripMenuItem.Click += new System.EventHandler(this.đặtHàngToolStripMenuItem_Click);
-            // 
-            // btnXoavattu
-            // 
-            this.btnXoavattu.Image = global::DXApplication2.Properties.Resources.baogia1;
-            this.btnXoavattu.Name = "btnXoavattu";
-            this.btnXoavattu.Size = new System.Drawing.Size(138, 22);
-            this.btnXoavattu.Text = "Xóa vật tư";
-            this.btnXoavattu.Click += new System.EventHandler(this.chiTiếtĐơnĐặtHàngToolStripMenuItem_Click);
-            // 
-            // reloadToolStripMenuItem
-            // 
-            this.reloadToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.arrow_sign_rotation_icon_reload_symbol_vector_13939029;
-            this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.reloadToolStripMenuItem.Text = "Reload";
-            this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
-            // 
             // FormDondathang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 634);
-            this.ContextMenuStrip = this.Listthem;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -829,6 +837,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSetDSPM)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bdsCtddh)).EndInit();
+            this.Listthem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cTDDHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
@@ -846,14 +855,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMactddh.Properties)).EndInit();
             this.gbDathang.ResumeLayout(false);
             this.gbDathang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtManv.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhacungcap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaddh.Properties)).EndInit();
-            this.Listthem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -910,7 +918,6 @@
         private System.Windows.Forms.BindingSource sp_InDanhSachNhanVienDangLamViecBindingSource;
         private QLVTDataSetTableAdapters.sp_InDanhSachNhanVienDangLamViecTableAdapter sp_InDanhSachNhanVienDangLamViecTableAdapter;
         private QLVTDataSetTableAdapters.TableAdapterManager tableAdapterManager2;
-        private System.Windows.Forms.ComboBox cbManv;
         private InDanhSachMaVatTu inDanhSachMaVatTu;
         private System.Windows.Forms.BindingSource sp_InDanhSachMaVatTuBindingSource;
         private InDanhSachMaVatTuTableAdapters.sp_InDanhSachMaVatTuTableAdapter sp_InDanhSachMaVatTuTableAdapter;
@@ -924,5 +931,7 @@
         private DevExpress.XtraBars.BarButtonItem btnReload;
         private DevExpress.XtraBars.BarButtonItem btnExit;
         private System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
+        private DevExpress.XtraBars.BarButtonItem btnHuy;
+        private System.Windows.Forms.ToolStripMenuItem hủyToolStripMenuItem;
     }
 }

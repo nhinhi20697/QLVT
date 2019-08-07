@@ -89,6 +89,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datHangTableAdapter = new DXApplication2.DSTableAdapters.DatHangTableAdapter();
+            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             mANVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -209,9 +210,10 @@
             this.btnChuyenchinhanh,
             this.btnThoat,
             this.btnDathang,
-            this.btnXoaddh});
+            this.btnXoaddh,
+            this.btnHuy});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 11;
+            this.barManager1.MaxItemId = 12;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -227,14 +229,15 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGhi, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnChuyenchinhanh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHuy, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
             // btnThem
             // 
-            this.btnThem.Caption = "Thêm nv";
+            this.btnThem.Caption = "Thêm";
             this.btnThem.Glyph = ((System.Drawing.Image)(resources.GetObject("btnThem.Glyph")));
             this.btnThem.Id = 0;
             this.btnThem.Name = "btnThem";
@@ -247,7 +250,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Caption = "Xóa nv";
+            this.btnXoa.Caption = "Xóa";
             this.btnXoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btnXoa.Glyph")));
             this.btnXoa.Id = 3;
             this.btnXoa.Name = "btnXoa";
@@ -352,6 +355,7 @@
             // 
             this.cbChinhanh.DataSource = this.v_DS_PHANMANHBindingSource;
             this.cbChinhanh.DisplayMember = "TENCN";
+            this.cbChinhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbChinhanh.FormattingEnabled = true;
             this.cbChinhanh.Location = new System.Drawing.Point(1101, 5);
             this.cbChinhanh.Name = "cbChinhanh";
@@ -680,6 +684,14 @@
             // 
             this.datHangTableAdapter.ClearBeforeFill = true;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Caption = "Hủy";
+            this.btnHuy.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHuy.Glyph")));
+            this.btnHuy.Id = 11;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
+            // 
             // FormNhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -780,5 +792,6 @@
         private DSTableAdapters.DatHangTableAdapter datHangTableAdapter;
         private DevExpress.XtraBars.BarButtonItem btnDathang;
         private DevExpress.XtraBars.BarButtonItem btnXoaddh;
+        private DevExpress.XtraBars.BarButtonItem btnHuy;
     }
 }

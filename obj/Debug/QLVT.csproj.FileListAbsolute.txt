@@ -9,9 +9,15 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplicatio
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.exe.licenses
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.exe
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.pdb
-C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\QLVT.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.Vattu.resources
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormKho.resources
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormDondathang.resources
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormPhieunhap.resources
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormPhieuxuat.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.XtraReport1.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormInDanhSachNhanVien.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.InDanhSachVatTuTheoTen.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormInDanhSachDDHChuaCoPN.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.InDDH.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\QLVT.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\DXApplication2\DXApplication2\obj\Debug\DXApplication2.FormTaoTK.resources

@@ -37,10 +37,17 @@ namespace DXApplication2
 
             if (Program.mGroup == "CONGTY")
             {
-                btnThem.Enabled = btnXoa.Enabled  = btnReload.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled=btnExit.Enabled =btnHuy.Enabled= false;
                 Listthem.Items[0].Visible = false;
                 Listthem.Items[1].Visible = false;
                 Listthem.Items[2].Visible = false;
+                Listthem.Items[3].Visible = false;
+            }
+            else
+            {
+                btnHuy.Enabled = false;
+                cbChinhanh.Enabled = false;
+                Listthem.Items[3].Visible = false;
             }
         }
 
@@ -104,7 +111,7 @@ namespace DXApplication2
 
         private void btnOkctddh_Click(object sender, EventArgs e)
         {
-            
+
             SqlDataReader myReader;
             String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraMaChiTietDDH]" +
                 "@MAVT = N'" + txtMavt.Text + "'," +
@@ -144,20 +151,30 @@ namespace DXApplication2
                     cTDDHTableAdapter.Fill(dS.CTDDH);
                     cbMavt.Enabled = txtSoluong.Enabled = txtDonGia.Enabled = btnOkctddh.Enabled = false;
                     MessageBox.Show("Thêm vật tư cho đơn hàng thành công.");
+                    Listthem.Items[0].Visible = true;
+                    Listthem.Items[1].Visible = true;
+                    Listthem.Items[2].Visible = true;
+                    Listthem.Items[3].Visible = false;
+                    btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = true;
                 }
             }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled =btnExit.Enabled= false;
+            btnHuy.Enabled = true;
             datHangBindingSource.AddNew();
-            txtMaddh.Enabled = txtNgay.Enabled = txtNhacungcap.Enabled = cbManv.Enabled = Btnokdh.Enabled = true;
-            txtManv.Text = cbManv.Text;
+            txtMaddh.Enabled = txtNgay.Enabled = txtNhacungcap.Enabled = Btnokdh.Enabled = true;
+            txtManv.Text = Program.username;
             txtMaddh.Focus();
             string temp = DateTime.Now.ToString("d");
             txtNgay.Text = temp;
             txtNgay.Enabled = false;
+            Listthem.Items[0].Visible = false;
+            Listthem.Items[1].Visible = false;
+            Listthem.Items[2].Visible = false;
+            Listthem.Items[3].Visible = false;
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -173,6 +190,15 @@ namespace DXApplication2
             txtMactddh.Enabled = false;
             txtMavt.Text = cbMavt.Text;
             txtSoluong.Focus();
+            Listthem.Items[0].Visible = false;
+            Listthem.Items[1].Visible = false;
+            Listthem.Items[2].Visible = false;
+            Listthem.Items[3].Visible = true;
+            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = false;
+            txtSoluong.Properties.MinValue = 1;
+            txtSoluong.Properties.MaxValue = 1000000;
+            txtDonGia.Properties.MinValue = 1;
+            txtDonGia.Properties.MaxValue = 100000000;
         }
 
         private void Btnokdh_Click(object sender, EventArgs e)
@@ -186,7 +212,7 @@ namespace DXApplication2
             {
                 SqlDataReader myReader;
                 String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraMaDDH]" +
-                    "@MADDH = N'" + txtMaddh.Text + "' SELECT  'Return Value' = @return_value";
+                    "@MADDH = N'" + txtMaddh.Text.Trim() + "' SELECT  'Return Value' = @return_value";
                 myReader = Program.ExecSqlDataReader(strlenh);
                 if (myReader == null) return;
                 myReader.Read();
@@ -208,13 +234,19 @@ namespace DXApplication2
                         txtNhacungcap.Focus();
                     }
                     else
-                    {                       
+                    {
+                        
                         datHangBindingSource.EndEdit();
+                        txtMaddh.Text.Trim();
                         datHangTableAdapter.Update(dS.DatHang);
                         datHangTableAdapter.Fill(dS.DatHang);
-                        txtMaddh.Enabled = txtNgay.Enabled = txtNhacungcap.Enabled = cbManv.Enabled = txtManv.Enabled = Btnokdh.Enabled = false;
+                        txtMaddh.Enabled = txtNgay.Enabled = txtNhacungcap.Enabled  = txtManv.Enabled = Btnokdh.Enabled = false;
                         MessageBox.Show("Thêm đơn hàng thành công.");
-                        btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = true;
+                        btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled=true;
+                        Listthem.Items[0].Visible = true;
+                        Listthem.Items[1].Visible = true;
+                        Listthem.Items[2].Visible = true;
+                        btnHuy.Enabled = false;
                     }
                 }
             }
@@ -225,9 +257,12 @@ namespace DXApplication2
             DialogResult dr = MessageBox.Show("Bạn có chắc chắc muốn xóa", "Xóa đơn đặt hàng.", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
+
                 SqlDataReader myReader;
-                String strlenh = "DECLARE	@return_value int EXEC @return_value = [dbo].[sp_KiemTraXoaChiTietDonDatHang]" +
-                    "@MADDH = N'" + txtMactddh.Text + "' SELECT  'Return Value' = @return_value";
+                String strlenh = "DECLARE @return_value int EXEC @return_value = [dbo].[sp_KiemTraXoaCTDDH]" +
+                    "@MADDH = N'" + txtMactddh.Text + "'," +
+                     "@MAVT = N'" + txtMavt.Text + "'" +
+                     "SELECT  'Return Value' = @return_value";
                 myReader = Program.ExecSqlDataReader(strlenh);
                 if (myReader == null) return;
                 myReader.Read();
@@ -242,9 +277,10 @@ namespace DXApplication2
                 }
                 else
                 {
-                    
+
                     cTDDHBindingSource.RemoveCurrent();
                     cTDDHTableAdapter.Update(dS.CTDDH);
+                    cTDDHTableAdapter.Fill(dS.CTDDH);
                     MessageBox.Show("Xóa vật tư trong đơn hàng thành công.");
                 }
             }
@@ -252,12 +288,12 @@ namespace DXApplication2
             {
                 return;
 
-            }          
+            }
         }
 
         private void cbMavt_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbMavt_SelectedIndexChanged(object sender, EventArgs e)
@@ -272,7 +308,7 @@ namespace DXApplication2
 
         private void cbManv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtManv.Text = cbManv.Text;
+            //txtManv.Text = cbManv.Text;
         }
 
         private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -295,7 +331,7 @@ namespace DXApplication2
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnReload.Enabled =  btnExit.Enabled = btnThem.Enabled = false;
+            btnReload.Enabled = btnExit.Enabled = btnThem.Enabled = false;
             DialogResult dr = MessageBox.Show("Bạn có chắc chắc muốn xóa", "Xóa đơn đặt hàng.", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes)
             {
@@ -321,13 +357,41 @@ namespace DXApplication2
                     datHangTableAdapter.Update(dS.DatHang);
                     btnReload.Enabled = btnExit.Enabled = btnThem.Enabled = true;
                     MessageBox.Show("Xóa đơn đặt hàng thành công.");
-                }                
+                }
             }
             else
             {
                 btnReload.Enabled = btnExit.Enabled = btnThem.Enabled = true;
 
-            }          
+            }
+        }
+
+        private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled =  true;
+            btnHuy.Enabled =Btnokdh.Enabled= false;
+            txtMaddh.Enabled = txtNhacungcap.Enabled = false;
+            datHangBindingSource.CancelEdit();
+            datHangBindingSource.EndEdit();
+            datHangTableAdapter.Fill(dS.DatHang);
+            Listthem.Items[0].Visible = true;
+            Listthem.Items[1].Visible = true;
+            Listthem.Items[2].Visible = true;
+
+        }
+
+        private void hủyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = true;
+            btnHuy.Enabled = false;
+            cTDDHBindingSource.CancelEdit();
+            cTDDHBindingSource.EndEdit();
+            cTDDHTableAdapter.Fill(dS.CTDDH);
+            Listthem.Items[0].Visible = true;
+            Listthem.Items[1].Visible = true;
+            Listthem.Items[2].Visible = true;
+            Listthem.Items[3].Visible = false;
+            cbMavt.Enabled = txtDonGia.Enabled = txtSoluong.Enabled = btnOkctddh.Enabled = false;
         }
     }
 }
