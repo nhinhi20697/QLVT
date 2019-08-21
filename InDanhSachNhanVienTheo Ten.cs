@@ -13,7 +13,6 @@ namespace DXApplication2
             InitializeComponent();
             sp_InDanhSachNhanVienTheoTenTangDanTableAdapter1.Connection.ConnectionString = Program.connstr;
             this.sp_InDanhSachNhanVienTheoTenTangDanTableAdapter1.Fill(danhsachnhanvien1.sp_InDanhSachNhanVienTheoTenTangDan);
-            
         }
 
     }

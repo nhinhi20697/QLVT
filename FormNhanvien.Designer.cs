@@ -47,6 +47,7 @@
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnChuyenchinhanh = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -89,7 +90,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.datHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.datHangTableAdapter = new DXApplication2.DSTableAdapters.DatHangTableAdapter();
-            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             mANVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -287,6 +287,14 @@
             this.btnThoat.Id = 8;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Caption = "Hủy";
+            this.btnHuy.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHuy.Glyph")));
+            this.btnHuy.Id = 11;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
             // bar3
             // 
@@ -599,6 +607,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtLuong.Size = new System.Drawing.Size(192, 20);
             this.txtLuong.TabIndex = 11;
+            this.txtLuong.Leave += new System.EventHandler(this.txtLuong_Leave);
             // 
             // txtNgaysinh
             // 
@@ -683,14 +692,6 @@
             // datHangTableAdapter
             // 
             this.datHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Caption = "Hủy";
-            this.btnHuy.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHuy.Glyph")));
-            this.btnHuy.Id = 11;
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
             // FormNhanvien
             // 

@@ -45,7 +45,7 @@ namespace DXApplication2
                 btnHuy.Enabled = false;
                  gbVattu.Enabled = false;
             }
-
+            
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -49,6 +49,7 @@ namespace DXApplication2
                 cbChinhanh.Enabled = false;
                 Listthem.Items[3].Visible = false;
             }
+            cbChinhanh.SelectedIndex = Program.mCoSo;
         }
 
         private void datHangBindingNavigatorSaveItem_Click(object sender, EventArgs e)

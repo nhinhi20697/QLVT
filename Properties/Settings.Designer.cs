@@ -52,5 +52,15 @@ namespace DXApplication2.Properties {
                 return ((string)(this["QLVTConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-R117U2T\\NHINHI;Initial Catalog=QLVT;User ID=sa;Password=123")]
+        public string QLVTConnectionString3 {
+            get {
+                return ((string)(this["QLVTConnectionString3"]));
+            }
+        }
     }
 }

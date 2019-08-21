@@ -42,7 +42,7 @@ namespace DXApplication2
                 gbNhanvien.Enabled = false;
                
             }
-
+            cbChinhanh.SelectedIndex = Program.mCoSo;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -405,6 +405,21 @@ namespace DXApplication2
             nhanVienBindingSource.CancelEdit();
             nhanVienBindingSource.EndEdit();
             nhanVienTableAdapter.Fill(dS.NhanVien);
+        }
+
+        private void txtLuong_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtLuong.Text.Equals("0"))
+                    return;
+                double temp = Convert.ToDouble(txtLuong.Text);
+                txtLuong.Text = temp.ToString("#,###");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi:" + ex);
+            }
         }
     }
 }

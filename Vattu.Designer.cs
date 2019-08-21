@@ -41,6 +41,7 @@
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -63,7 +64,6 @@
             this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONGTON = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             mAVTLabel1 = new System.Windows.Forms.Label();
             tENVTLabel1 = new System.Windows.Forms.Label();
             dVTLabel1 = new System.Windows.Forms.Label();
@@ -197,6 +197,14 @@
             this.btnExit.Id = 5;
             this.btnExit.Name = "btnExit";
             this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Caption = "Hủy";
+            this.btnHuy.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHuy.Glyph")));
+            this.btnHuy.Id = 6;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
             // bar3
             // 
@@ -407,14 +415,6 @@
             this.colSOLUONGTON.OptionsColumn.AllowEdit = false;
             this.colSOLUONGTON.Visible = true;
             this.colSOLUONGTON.VisibleIndex = 3;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Caption = "Hủy";
-            this.btnHuy.Glyph = ((System.Drawing.Image)(resources.GetObject("btnHuy.Glyph")));
-            this.btnHuy.Id = 6;
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
             // Vattu
             // 

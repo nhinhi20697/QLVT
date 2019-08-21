@@ -12,7 +12,7 @@ namespace DXApplication2
     static class Program
     {
         public static FormDangNhap frDangNhap;
-        public static FormMain frmMain;
+        //public static FormMain frmMain;
         
 
         public static SqlConnection conn = new SqlConnection();

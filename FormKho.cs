@@ -44,7 +44,7 @@ namespace DXApplication2
                 gbKho.Enabled = false;
                 btnHuy.Enabled = false;
             }
-
+            cbChinhanh.SelectedIndex = Program.mCoSo;
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

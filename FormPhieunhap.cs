@@ -37,8 +37,12 @@ namespace DXApplication2
             if (Program.mGroup == "CONGTY")
             {
                 btnThem.Enabled = btnXoa.Enabled = false;
-                btnReload.Enabled = true;
+                btnReload.Enabled = btnExit.Enabled=false;
                 cbChinhanh.Enabled = true;
+                listVattu.Items[0].Visible = false;
+                listVattu.Items[1].Visible = false;
+                listVattu.Items[2].Visible = false;
+
             }
             else
             {
@@ -49,6 +53,7 @@ namespace DXApplication2
 
             isLoaded = true;
             listVattu.Items[2].Visible = false;
+            cbChinhanh.SelectedIndex = Program.mCoSo;
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

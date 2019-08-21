@@ -38,13 +38,16 @@ namespace DXApplication2
             {
                 btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnHuy.Enabled = btnExit.Enabled = false;
                 cbChinhanh.Enabled = true;
+                Listctpx.Items[0].Visible = false;
+                Listctpx.Items[1].Visible = false;
+                Listctpx.Items[2].Visible = false;
             }
             else
             {
                 btnHuy.Enabled = false;
                 cbChinhanh.Enabled = false;
             }
-
+            cbChinhanh.SelectedIndex = Program.mCoSo;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

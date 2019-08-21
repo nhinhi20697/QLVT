@@ -198,5 +198,17 @@ namespace DXApplication2
                 f.Show();
             }
         }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.frDangNhap.Show();
+            Close();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Program.frDangNhap.Show();
+            Close();
+        }
     }
 }
