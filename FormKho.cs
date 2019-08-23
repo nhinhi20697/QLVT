@@ -135,7 +135,7 @@ namespace DXApplication2
                                 txtMakho.Text.Trim();
                                 khoBindingSource.EndEdit();
 
-                                btnExit.Enabled = btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = true;
+                                btnThem.Enabled=btnExit.Enabled = btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = true;
                                 khoTableAdapter.Update(dS.Kho);
                                 khoTableAdapter.Fill(dS.Kho);
                                 bdsKho.Enabled = true;
@@ -160,6 +160,7 @@ namespace DXApplication2
             {              
                 khoBindingSource.RemoveCurrent();
                 khoTableAdapter.Update(dS.Kho);
+                khoTableAdapter.Fill(dS.Kho);
                 btnReload.Enabled = btnGhi.Enabled = btnExit.Enabled = btnThem.Enabled = true;
             }
             else

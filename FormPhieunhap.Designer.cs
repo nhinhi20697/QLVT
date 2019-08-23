@@ -39,7 +39,7 @@
             System.Windows.Forms.Label dONGIALabel;
             System.Windows.Forms.Label tENCNLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPhieunhap));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -381,9 +381,9 @@
             this.bdsCtpn.ContextMenuStrip = this.listVattu;
             this.bdsCtpn.DataSource = this.cTPNBindingSource;
             this.bdsCtpn.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.bdsCtpn.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.bdsCtpn.Location = new System.Drawing.Point(559, 0);
             this.bdsCtpn.MainView = this.gridView2;
             this.bdsCtpn.MenuManager = this.barManager1;
@@ -585,6 +585,7 @@
             // 
             // gbCtpn
             // 
+            this.gbCtpn.ContextMenuStrip = this.listVattu;
             this.gbCtpn.Controls.Add(this.cbMavt);
             this.gbCtpn.Controls.Add(this.btnOkctpn);
             this.gbCtpn.Controls.Add(dONGIALabel);
@@ -601,7 +602,7 @@
             this.gbCtpn.Size = new System.Drawing.Size(567, 264);
             this.gbCtpn.TabIndex = 1;
             this.gbCtpn.TabStop = false;
-            this.gbCtpn.Text = "c";
+            this.gbCtpn.Text = "THÔNG TIN CHI TIẾT PHIẾU NHẬP:";
             // 
             // cbMavt
             // 

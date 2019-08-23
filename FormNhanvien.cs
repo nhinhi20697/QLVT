@@ -93,12 +93,12 @@ namespace DXApplication2
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             nhanVienBindingSource.AddNew();
+
             btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = btnChuyenchinhanh.Enabled = btnXoaddh.Enabled= btnThem.Enabled=btnThoat.Enabled= false;
             btnHuy.Enabled = true;
             gbNhanvien.Enabled = true;
-            bdsNhanvien.Enabled = false;
+            
             if (Program.mCoSo == 0)
             {
                 txtMacn.Text = "CN1";
@@ -128,6 +128,10 @@ namespace DXApplication2
             txtManv.Text = temps;
             txtManv.Enabled = false;
             txtHo.Focus();
+            //txtLuong.Text = 4000000 + "";
+            this.txtLuong.Properties.MinValue = 4000000;
+            this.txtLuong.Properties.MaxValue = 4000000000000000000;
+            bdsNhanvien.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -189,14 +189,22 @@ namespace DXApplication2
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(FormTaoTK));
-            if (frm != null) frm.Activate();
+            if (Program.mGroup == "USER")
+            {
+                MessageBox.Show("Bạn không được tạo login.Kiểm tra lại.");
+
+            }
             else
             {
-                FormTaoTK f = new FormTaoTK();
-                f.MdiParent = this;
-                f.Show();
-            }
+                Form frm = this.CheckExists(typeof(FormTaoTK));
+                if (frm != null) frm.Activate();
+                else
+                {
+                    FormTaoTK f = new FormTaoTK();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }                 
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

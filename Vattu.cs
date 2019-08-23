@@ -168,6 +168,7 @@ namespace DXApplication2
                 {
                     vattuBindingSource.RemoveCurrent();
                     vattuTableAdapter.Update(dS.Vattu);
+                    vattuTableAdapter.Fill(dS.Vattu);
                     btnReload.Enabled = btnUndo.Enabled = btnGhi.Enabled = btnExit.Enabled = btnThem.Enabled = true;
                     
                 }

@@ -84,8 +84,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.gbCtpx = new System.Windows.Forms.GroupBox();
             this.cbMavt = new System.Windows.Forms.ComboBox();
-            this.spInDanhSachMaVatTuCTPXBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.danhsachnhanvien = new DXApplication2.Danhsachnhanvien();
             this.btnOkctpx = new System.Windows.Forms.Button();
             this.txtDongia = new DevExpress.XtraEditors.SpinEdit();
             this.txtSoluong = new DevExpress.XtraEditors.SpinEdit();
@@ -97,6 +95,8 @@
             this.txtTenkhachhang = new DevExpress.XtraEditors.TextEdit();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.txtMaphieuxuat = new DevExpress.XtraEditors.TextEdit();
+            this.spInDanhSachMaVatTuCTPXBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.danhsachnhanvien = new DXApplication2.Danhsachnhanvien();
             this.sp_InDanhSachNhanVienDangLamViecBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVTDataSet = new DXApplication2.QLVTDataSet();
             this.sp_InDanhSachNhanVienDangLamViecTableAdapter = new DXApplication2.QLVTDataSetTableAdapters.sp_InDanhSachNhanVienDangLamViecTableAdapter();
@@ -129,8 +129,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.gbCtpx.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spInDanhSachMaVatTuCTPXBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danhsachnhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDongia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoluong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMavt.Properties)).BeginInit();
@@ -141,6 +139,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaphieuxuat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spInDanhSachMaVatTuCTPXBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhsachnhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuCTPXBindingSource)).BeginInit();
@@ -425,7 +425,7 @@
             this.hủyToolStripMenuItem,
             this.reloadToolStripMenuItem});
             this.Listctpx.Name = "contextMenuStrip1";
-            this.Listctpx.Size = new System.Drawing.Size(138, 70);
+            this.Listctpx.Size = new System.Drawing.Size(153, 92);
             // 
             // thêmCTPXToolStripMenuItem
             // 
@@ -610,6 +610,7 @@
             // 
             // gbCtpx
             // 
+            this.gbCtpx.ContextMenuStrip = this.Listctpx;
             this.gbCtpx.Controls.Add(this.cbMavt);
             this.gbCtpx.Controls.Add(this.btnOkctpx);
             this.gbCtpx.Controls.Add(dONGIALabel);
@@ -638,16 +639,6 @@
             this.cbMavt.Size = new System.Drawing.Size(95, 21);
             this.cbMavt.TabIndex = 10;
             this.cbMavt.SelectedIndexChanged += new System.EventHandler(this.cbMavt_SelectedIndexChanged);
-            // 
-            // spInDanhSachMaVatTuCTPXBindingSource
-            // 
-            this.spInDanhSachMaVatTuCTPXBindingSource.DataMember = "sp_InDanhSachMaVatTuCTPX";
-            this.spInDanhSachMaVatTuCTPXBindingSource.DataSource = this.danhsachnhanvien;
-            // 
-            // danhsachnhanvien
-            // 
-            this.danhsachnhanvien.DataSetName = "Danhsachnhanvien";
-            this.danhsachnhanvien.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnOkctpx
             // 
@@ -797,6 +788,16 @@
             this.txtMaphieuxuat.Size = new System.Drawing.Size(179, 20);
             this.txtMaphieuxuat.TabIndex = 1;
             // 
+            // spInDanhSachMaVatTuCTPXBindingSource
+            // 
+            this.spInDanhSachMaVatTuCTPXBindingSource.DataMember = "sp_InDanhSachMaVatTuCTPX";
+            this.spInDanhSachMaVatTuCTPXBindingSource.DataSource = this.danhsachnhanvien;
+            // 
+            // danhsachnhanvien
+            // 
+            this.danhsachnhanvien.DataSetName = "Danhsachnhanvien";
+            this.danhsachnhanvien.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // sp_InDanhSachNhanVienDangLamViecBindingSource
             // 
             this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataMember = "sp_InDanhSachNhanVienDangLamViec";
@@ -865,8 +866,6 @@
             this.panel3.ResumeLayout(false);
             this.gbCtpx.ResumeLayout(false);
             this.gbCtpx.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spInDanhSachMaVatTuCTPXBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.danhsachnhanvien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDongia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoluong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMavt.Properties)).EndInit();
@@ -878,6 +877,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaphieuxuat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spInDanhSachMaVatTuCTPXBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhsachnhanvien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuCTPXBindingSource)).EndInit();

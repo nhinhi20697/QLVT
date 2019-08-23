@@ -203,6 +203,7 @@ namespace DXApplication2
             listVattu.Items[0].Visible = false;
             listVattu.Items[1].Visible = false;
             listVattu.Items[2].Visible = true;
+            bdsCtpn.Enabled = false;
         }
 
         private void cbMavt_SelectedIndexChanged(object sender, EventArgs e)

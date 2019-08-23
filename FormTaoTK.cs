@@ -37,6 +37,7 @@ namespace DXApplication2
                 cbRole.Items.Add("CHINHANH");
                 cbRole.Items.Add("USER");
             }
+            txtNamLogin.Focus();
         }
 
 
@@ -99,6 +100,12 @@ namespace DXApplication2
                     this.v_DSNV_CHUA_TAO_LOGINTableAdapter.Fill(this.qLVTDataSet3.V_DSNV_CHUA_TAO_LOGIN);
                 }
             }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            txtNamLogin.Text = txtPass.Text = txtPassCF.Text = "";
+            cbRole.Text = "";
         }
     }
 }

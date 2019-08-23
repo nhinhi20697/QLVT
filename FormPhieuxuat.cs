@@ -111,11 +111,11 @@ namespace DXApplication2
         {
 
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = false;
-            btnHuy.Enabled=true;
+            btnHuy.Enabled = true;
             phieuXuatBindingSource.AddNew();
             string temp = DateTime.Now.ToString("d");
             txtNgay.Text = temp;
-            txtMaphieuxuat.Enabled = txtTenkhachhang.Enabled =  true;
+            txtMaphieuxuat.Enabled = txtTenkhachhang.Enabled = true;
             txtManv.Text = Program.username;
             btnOkphieuxuat.Enabled = true;
             Listctpx.Items[0].Visible = false;
@@ -132,7 +132,7 @@ namespace DXApplication2
 
         private void cbManv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnOkphieuxuat_Click(object sender, EventArgs e)
@@ -176,7 +176,7 @@ namespace DXApplication2
                         phieuXuatTableAdapter.Update(dS.PhieuXuat);
                         phieuXuatTableAdapter.Fill(dS.PhieuXuat);
 
-                        txtMaphieuxuat.Enabled = txtTenkhachhang.Enabled =btnHuy.Enabled= false;
+                        txtMaphieuxuat.Enabled = txtTenkhachhang.Enabled = btnHuy.Enabled = false;
                         btnOkphieuxuat.Enabled = false;
                         Listctpx.Items[0].Visible = true;
                         Listctpx.Items[2].Visible = true;
@@ -193,7 +193,7 @@ namespace DXApplication2
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             btnThem.Enabled = btnReload.Enabled = btnHuy.Enabled = btnExit.Enabled = false;
-            
+
             DialogResult dr = MessageBox.Show("Bạn có chắc chắc muốn xóa", "Xóa phiếu xuất.", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
 
             if (dr == DialogResult.Yes)
@@ -215,23 +215,23 @@ namespace DXApplication2
                     return;
                 }
                 else
-                {                    
+                {
                     phieuXuatBindingSource.RemoveCurrent();
                     phieuXuatTableAdapter.Update(dS.PhieuXuat);
                     MessageBox.Show("Xóa phiếu xuất thành công.");
                     btnThem.Enabled = btnReload.Enabled = btnHuy.Enabled = btnExit.Enabled = true;
-                    
+
                 }
             }
             else
             {
                 btnThem.Enabled = btnReload.Enabled = btnHuy.Enabled = btnExit.Enabled = true;
-            }      
+            }
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btnThem.Enabled = btnXoa.Enabled = btnExit.Enabled=btnHuy.Enabled = false;
+            btnThem.Enabled = btnXoa.Enabled = btnExit.Enabled = btnHuy.Enabled = false;
             this.phieuXuatTableAdapter.Fill(this.dS.PhieuXuat);
             MessageBox.Show("Cập nhật danh sách thành công", "Thông báo");
             btnThem.Enabled = btnXoa.Enabled = btnExit.Enabled = btnHuy.Enabled = true;
@@ -239,7 +239,8 @@ namespace DXApplication2
 
         private void thêmCTPXToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnThem.Enabled = btnXoa.Enabled = btnExit.Enabled = btnHuy.Enabled =btnReload.Enabled= false;
+            cbMavt.Items.Clear();
+            btnThem.Enabled = btnXoa.Enabled = btnExit.Enabled = btnHuy.Enabled = btnReload.Enabled = false;
             cTPXBindingSource.AddNew();
             txtMactpx.Text = txtMaphieuxuat.Text;
             SqlDataReader myReader1;
@@ -249,23 +250,34 @@ namespace DXApplication2
 
             myReader1 = Program.ExecSqlDataReader(strlenh1);
 
-            if (myReader1 == null) return;
+            if (myReader1 == null)
+            {
+
+                return;
+            }
 
             while (myReader1.Read())
             {
                 cbMavt.Items.Add(myReader1.GetString(0));
             }
-
             myReader1.Close();
-            cbMavt.Enabled = txtSoluong.Enabled = txtDongia.Enabled=btnOkctpx.Enabled = true;
+            cbMavt.Enabled = txtSoluong.Enabled = txtDongia.Enabled = btnOkctpx.Enabled = true;
             Listctpx.Items[0].Visible = false;
             Listctpx.Items[2].Visible = false;
             Listctpx.Items[1].Visible = true;
-            bdsPhieuxuat.Enabled = false;      
+            bdsPhieuxuat.Enabled = false;
+            bdsCtpx.Enabled = false;
         }
 
         private void cbMavt_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //if (Program.check == 1)
+            //{
+            //    MessageBox.Show("Chi tiết phiếu xuất này đã hết mã vật tư để chọn.Nhập phiếu mới hoặc chọn phiếu khác.");
+            //    Program.check = 0;
+            //}
+            //else
+            //{
             txtMavt.Text = cbMavt.Text;
 
             SqlDataReader myReader;
@@ -273,21 +285,26 @@ namespace DXApplication2
                         "@MAVT = N'" + txtMavt.Text + "' SELECT  'Return Value' = @return_value";
             myReader = Program.ExecSqlDataReader(strlenh1);
             if (myReader == null) return;
-            myReader.Read();           
-            try{
+            myReader.Read();
+            try
+            {
                 int value = myReader.GetInt32(0);
                 txtSoluong.Text = value + "";
                 myReader.Close();
                 this.txtSoluong.Properties.MinValue = 1;
                 this.txtSoluong.Properties.MaxValue = value;
-            }catch(Exception a){
-                
             }
+            catch (Exception a)
+            {
+
+            }
+            //}
+
         }
 
         private void btnOkctpx_Click(object sender, EventArgs e)
         {
-            if(txtDongia.Text=="")
+            if (txtDongia.Text == "")
             {
                 MessageBox.Show("Đơn giá không được để trống.");
                 txtDongia.Focus();
@@ -309,13 +326,13 @@ namespace DXApplication2
                 if (value == 1)
                 {
                     MessageBox.Show("Chi tiết phiếu xuất này đã tồn tại.Vui lòng chọn mã vật tư khác.");
-                    cbMavt.Focus();                  
+                    cbMavt.Focus();
                     return;
                 }
                 else
                 {
                     cTPXBindingSource.EndEdit();
-                    btnReload.Enabled = btnXoa.Enabled = btnThem.Enabled = btnExit.Enabled =  true;
+                    btnReload.Enabled = btnXoa.Enabled = btnThem.Enabled = btnExit.Enabled = true;
                     cbMavt.Enabled = txtDongia.Enabled = txtSoluong.Enabled = false;
                     btnOkctpx.Enabled = false;
                     Listctpx.Items[0].Visible = true;
@@ -326,12 +343,13 @@ namespace DXApplication2
                     SqlDataReader myReader1;
 
                     string lenh = "EXEC  sp_GiamSLTCTPX '" +
-                                txtMavt.Text + "','" +                                                              
+                                txtMavt.Text + "','" +
                                 temp + "'";
                     myReader1 = Program.ExecSqlDataReader(lenh);
-                    bdsPhieuxuat.Enabled =  true;
+                    bdsPhieuxuat.Enabled = true;
+                    bdsCtpx.Enabled = true;
                 }
-               
+
             }
         }
 
@@ -360,12 +378,13 @@ namespace DXApplication2
             cTPXBindingSource.CancelEdit();
             cTPXBindingSource.EndEdit();
             cTPXTableAdapter.Fill(dS.CTPX);
-            cbMavt.Enabled = txtSoluong.Enabled = txtDongia.Enabled = btnOkctpx.Enabled=false;
+            cbMavt.Enabled = txtSoluong.Enabled = txtDongia.Enabled = btnOkctpx.Enabled = false;
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = true;
             Listctpx.Items[0].Visible = true;
             Listctpx.Items[1].Visible = false;
             Listctpx.Items[2].Visible = true;
             bdsPhieuxuat.Enabled = true;
+            bdsCtpx.Enabled = true;
         }
 
         private void bdsPhieuxuat_Click(object sender, EventArgs e)
@@ -373,6 +392,6 @@ namespace DXApplication2
 
         }
 
-       
+
     }
 }

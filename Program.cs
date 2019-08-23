@@ -44,7 +44,7 @@ namespace DXApplication2
         public static SqlCommand cmd = new SqlCommand();
 
         public static int mCoSo;
-
+       
 
         // giữ danh sách phân mảnh của cơ sở khi đăng nhập
 

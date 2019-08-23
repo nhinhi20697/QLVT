@@ -21,9 +21,9 @@ namespace DXApplication2
         private void FormDondathang_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'inDanhSachMaVatTu.sp_InDanhSachMaVatTu' table. You can move, or remove it, as needed.
-            this.sp_InDanhSachMaVatTuTableAdapter.Fill(this.inDanhSachMaVatTu.sp_InDanhSachMaVatTu);
+            //this.sp_InDanhSachMaVatTuTableAdapter.Fill(this.inDanhSachMaVatTu.sp_InDanhSachMaVatTu);
             // TODO: This line of code loads data into the 'qLVTDataSet.sp_InDanhSachNhanVienDangLamViec' table. You can move, or remove it, as needed.
-            this.sp_InDanhSachNhanVienDangLamViecTableAdapter.Fill(this.qLVTDataSet.sp_InDanhSachNhanVienDangLamViec);
+            //this.sp_InDanhSachNhanVienDangLamViecTableAdapter.Fill(this.qLVTDataSet.sp_InDanhSachNhanVienDangLamViec);
             // TODO: This line of code loads data into the 'qLVTDataSetDSPM.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.qLVTDataSetDSPM.V_DS_PHANMANH);
             // TODO: This line of code loads data into the 'dS.CTDDH' table. You can move, or remove it, as needed.
@@ -187,7 +187,8 @@ namespace DXApplication2
 
         private void đặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            cbMavt.Items.Clear();
+
             cTDDHBindingSource.AddNew();
              txtSoluong.Enabled = txtDonGia.Enabled = btnOkctddh.Enabled = true;
             txtMactddh.Text = txtMaddh.Text;
@@ -216,7 +217,7 @@ namespace DXApplication2
             txtDonGia.Properties.MinValue = 1;
             txtDonGia.Properties.MaxValue = 100000000;
             bdsDathang.Enabled  = false;
-
+            bdsCtddh.Enabled = false;
             
         }
 
@@ -414,7 +415,9 @@ namespace DXApplication2
             Listthem.Items[3].Visible = false;
             cbMavt.Enabled = txtDonGia.Enabled = txtSoluong.Enabled = btnOkctddh.Enabled = false;
             bdsDathang.Enabled = bdsCtddh.Enabled = true;
+            bdsCtddh.Enabled = true;
         }
+        
 
         private void txtDonGia_EditValueChanged(object sender, EventArgs e)
         {

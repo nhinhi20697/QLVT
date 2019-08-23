@@ -392,13 +392,13 @@
             this.reloadToolStripMenuItem,
             this.hủyToolStripMenuItem});
             this.Listthem.Name = "nhi";
-            this.Listthem.Size = new System.Drawing.Size(139, 92);
+            this.Listthem.Size = new System.Drawing.Size(153, 114);
             // 
             // đặtHàngToolStripMenuItem
             // 
             this.đặtHàngToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.online_store;
             this.đặtHàngToolStripMenuItem.Name = "đặtHàngToolStripMenuItem";
-            this.đặtHàngToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.đặtHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.đặtHàngToolStripMenuItem.Text = "Thêm vật tư";
             this.đặtHàngToolStripMenuItem.Click += new System.EventHandler(this.đặtHàngToolStripMenuItem_Click);
             // 
@@ -406,7 +406,7 @@
             // 
             this.btnXoavattu.Image = global::DXApplication2.Properties.Resources.baogia1;
             this.btnXoavattu.Name = "btnXoavattu";
-            this.btnXoavattu.Size = new System.Drawing.Size(138, 22);
+            this.btnXoavattu.Size = new System.Drawing.Size(152, 22);
             this.btnXoavattu.Text = "Xóa vật tư";
             this.btnXoavattu.Click += new System.EventHandler(this.chiTiếtĐơnĐặtHàngToolStripMenuItem_Click);
             // 
@@ -414,7 +414,7 @@
             // 
             this.reloadToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.arrow_sign_rotation_icon_reload_symbol_vector_13939029;
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
@@ -422,7 +422,7 @@
             // 
             this.hủyToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.back;
             this.hủyToolStripMenuItem.Name = "hủyToolStripMenuItem";
-            this.hủyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.hủyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hủyToolStripMenuItem.Text = "Hủy";
             this.hủyToolStripMenuItem.Click += new System.EventHandler(this.hủyToolStripMenuItem_Click);
             // 
@@ -560,6 +560,7 @@
             // 
             // gbCtddh
             // 
+            this.gbCtddh.ContextMenuStrip = this.Listthem;
             this.gbCtddh.Controls.Add(label1);
             this.gbCtddh.Controls.Add(mAVTLabel1);
             this.gbCtddh.Controls.Add(this.cbMavt);
