@@ -98,7 +98,7 @@ namespace DXApplication2
             btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled = btnChuyenchinhanh.Enabled = btnXoaddh.Enabled= btnThem.Enabled=btnThoat.Enabled= false;
             btnHuy.Enabled = true;
             gbNhanvien.Enabled = true;
-
+            bdsNhanvien.Enabled = false;
             if (Program.mCoSo == 0)
             {
                 txtMacn.Text = "CN1";
@@ -184,6 +184,7 @@ namespace DXApplication2
                                     nhanVienTableAdapter.Fill(dS.NhanVien);
                                     bdsNhanvien.Enabled = true;
                                     gbNhanvien.Enabled = false;
+                                    bdsNhanvien.Enabled = true;
                                 }
 
                             }
@@ -218,11 +219,15 @@ namespace DXApplication2
                 if (value1 == 1)
                 {
                     MessageBox.Show("Nhân viên đã lập phiếu.Không được xóa.");
+                    txtTrangthaixoa.Text = "1";
+                    nhanVienBindingSource.EndEdit();
+                    nhanVienTableAdapter.Update(dS.NhanVien);
                 }
                 else
                 {
-                    txtTrangthaixoa.Text = "1";
-                    nhanVienBindingSource.EndEdit();
+                    
+                    nhanVienBindingSource.RemoveCurrent();
+                    nhanVienTableAdapter.Update(dS.NhanVien);
                 }
 
                 gbNhanvien.Enabled = true;
@@ -405,6 +410,7 @@ namespace DXApplication2
             nhanVienBindingSource.CancelEdit();
             nhanVienBindingSource.EndEdit();
             nhanVienTableAdapter.Fill(dS.NhanVien);
+            bdsNhanvien.Enabled = true;
         }
 
         private void txtLuong_Leave(object sender, EventArgs e)

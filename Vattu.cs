@@ -61,6 +61,7 @@ namespace DXApplication2
             btnHuy.Enabled = true;
             txtSlt.Text = 0+"";
             txtSlt.Enabled = false;
+            bdsVattu.Enabled = false;
             txtMavt.Focus();
         }
 
@@ -132,6 +133,7 @@ namespace DXApplication2
                         
                         vattuTableAdapter.Update(dS.Vattu);
                         vattuTableAdapter.Fill(dS.Vattu);
+                        bdsVattu.Enabled = true;
                     }
 
                 }
@@ -252,6 +254,7 @@ namespace DXApplication2
             vattuBindingSource.EndEdit();
 
             vattuTableAdapter.Fill(dS.Vattu);
+            bdsVattu.Enabled = true;
         }
     }
 }

@@ -59,7 +59,7 @@ namespace DXApplication2
             btnGhi.Enabled = btnReload.Enabled = btnXoa.Enabled =btnExit.Enabled=btnThem.Enabled= false;
             btnHuy.Enabled = true;
             gbKho.Enabled = true;
-
+            bdsKho.Enabled = false;
             if (Program.mCoSo == 0)
             {
                 txtMacn.Text = "CN1";
@@ -141,6 +141,7 @@ namespace DXApplication2
                                 bdsKho.Enabled = true;
                                 gbKho.Enabled = false;
                                 btnHuy.Enabled = false;
+                                bdsKho.Enabled = true;
                             }
                         }
 
@@ -236,6 +237,7 @@ namespace DXApplication2
             khoBindingSource.EndEdit();
 
             khoTableAdapter.Fill(dS.Kho);
+            bdsKho.Enabled = true;
         }
     }
 }

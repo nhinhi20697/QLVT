@@ -92,13 +92,13 @@
             this.txtMavt = new DevExpress.XtraEditors.TextEdit();
             this.txtMactpx = new DevExpress.XtraEditors.TextEdit();
             this.gbPhieuxuat = new System.Windows.Forms.GroupBox();
-            this.sp_InDanhSachNhanVienDangLamViecBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVTDataSet = new DXApplication2.QLVTDataSet();
             this.btnOkphieuxuat = new System.Windows.Forms.Button();
             this.txtManv = new DevExpress.XtraEditors.SpinEdit();
             this.txtTenkhachhang = new DevExpress.XtraEditors.TextEdit();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.txtMaphieuxuat = new DevExpress.XtraEditors.TextEdit();
+            this.sp_InDanhSachNhanVienDangLamViecBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVTDataSet = new DXApplication2.QLVTDataSet();
             this.sp_InDanhSachNhanVienDangLamViecTableAdapter = new DXApplication2.QLVTDataSetTableAdapters.sp_InDanhSachNhanVienDangLamViecTableAdapter();
             this.tableAdapterManager2 = new DXApplication2.QLVTDataSetTableAdapters.TableAdapterManager();
             this.sp_InDanhSachMaVatTuCTPXBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -136,13 +136,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMavt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMactpx.Properties)).BeginInit();
             this.gbPhieuxuat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtManv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenkhachhang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaphieuxuat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuCTPXBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -431,7 +431,7 @@
             // 
             this.thêmCTPXToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.baogia;
             this.thêmCTPXToolStripMenuItem.Name = "thêmCTPXToolStripMenuItem";
-            this.thêmCTPXToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.thêmCTPXToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thêmCTPXToolStripMenuItem.Text = "Thêm CTPX";
             this.thêmCTPXToolStripMenuItem.Click += new System.EventHandler(this.thêmCTPXToolStripMenuItem_Click);
             // 
@@ -439,7 +439,7 @@
             // 
             this.hủyToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.images;
             this.hủyToolStripMenuItem.Name = "hủyToolStripMenuItem";
-            this.hủyToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.hủyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.hủyToolStripMenuItem.Text = "Hủy";
             this.hủyToolStripMenuItem.Click += new System.EventHandler(this.hủyToolStripMenuItem_Click);
             // 
@@ -447,7 +447,7 @@
             // 
             this.reloadToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.arrow_sign_rotation_icon_reload_symbol_vector_13939029;
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
@@ -630,8 +630,6 @@
             // 
             // cbMavt
             // 
-            this.cbMavt.DataSource = this.spInDanhSachMaVatTuCTPXBindingSource;
-            this.cbMavt.DisplayMember = "MAVT";
             this.cbMavt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMavt.Enabled = false;
             this.cbMavt.FormattingEnabled = true;
@@ -736,16 +734,6 @@
             this.gbPhieuxuat.TabStop = false;
             this.gbPhieuxuat.Text = "THÔNG TIN PHIẾU XUẤT:";
             // 
-            // sp_InDanhSachNhanVienDangLamViecBindingSource
-            // 
-            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataMember = "sp_InDanhSachNhanVienDangLamViec";
-            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataSource = this.qLVTDataSet;
-            // 
-            // qLVTDataSet
-            // 
-            this.qLVTDataSet.DataSetName = "QLVTDataSet";
-            this.qLVTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btnOkphieuxuat
             // 
             this.btnOkphieuxuat.Enabled = false;
@@ -808,6 +796,16 @@
             this.txtMaphieuxuat.Name = "txtMaphieuxuat";
             this.txtMaphieuxuat.Size = new System.Drawing.Size(179, 20);
             this.txtMaphieuxuat.TabIndex = 1;
+            // 
+            // sp_InDanhSachNhanVienDangLamViecBindingSource
+            // 
+            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataMember = "sp_InDanhSachNhanVienDangLamViec";
+            this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataSource = this.qLVTDataSet;
+            // 
+            // qLVTDataSet
+            // 
+            this.qLVTDataSet.DataSetName = "QLVTDataSet";
+            this.qLVTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sp_InDanhSachNhanVienDangLamViecTableAdapter
             // 
@@ -875,13 +873,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMactpx.Properties)).EndInit();
             this.gbPhieuxuat.ResumeLayout(false);
             this.gbPhieuxuat.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtManv.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenkhachhang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaphieuxuat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuCTPXBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

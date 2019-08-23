@@ -21,9 +21,9 @@ namespace DXApplication2
         private void FormPhieuxuat_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'danhsachnhanvien.sp_InDanhSachMaVatTuCTPX' table. You can move, or remove it, as needed.
-            this.sp_InDanhSachMaVatTuCTPXTableAdapter.Fill(this.danhsachnhanvien.sp_InDanhSachMaVatTuCTPX);
+            //this.sp_InDanhSachMaVatTuCTPXTableAdapter.Fill(this.danhsachnhanvien.sp_InDanhSachMaVatTuCTPX);
             // TODO: This line of code loads data into the 'qLVTDataSet.sp_InDanhSachNhanVienDangLamViec' table. You can move, or remove it, as needed.
-            this.sp_InDanhSachNhanVienDangLamViecTableAdapter.Fill(this.qLVTDataSet.sp_InDanhSachNhanVienDangLamViec);
+            //this.sp_InDanhSachNhanVienDangLamViecTableAdapter.Fill(this.qLVTDataSet.sp_InDanhSachNhanVienDangLamViec);
             // TODO: This line of code loads data into the 'qLVTDataSetDSPM.V_DS_PHANMANH' table. You can move, or remove it, as needed.
             this.v_DS_PHANMANHTableAdapter.Fill(this.qLVTDataSetDSPM.V_DS_PHANMANH);
             // TODO: This line of code loads data into the 'dS.PhieuXuat' table. You can move, or remove it, as needed.
@@ -122,6 +122,7 @@ namespace DXApplication2
             Listctpx.Items[1].Visible = false;
             Listctpx.Items[2].Visible = false;
             txtMaphieuxuat.Focus();
+            bdsPhieuxuat.Enabled = false;
         }
 
         private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -179,6 +180,7 @@ namespace DXApplication2
                         btnOkphieuxuat.Enabled = false;
                         Listctpx.Items[0].Visible = true;
                         Listctpx.Items[2].Visible = true;
+                        bdsPhieuxuat.Enabled = true;
                     }
 
 
@@ -240,12 +242,26 @@ namespace DXApplication2
             btnThem.Enabled = btnXoa.Enabled = btnExit.Enabled = btnHuy.Enabled =btnReload.Enabled= false;
             cTPXBindingSource.AddNew();
             txtMactpx.Text = txtMaphieuxuat.Text;
+            SqlDataReader myReader1;
+            String strlenh1 = "EXEC [dbo].[sp_InDanhSachMaVatTuCTPX]" +
+
+                "@MAPX = N'" + txtMactpx.Text + "'";
+
+            myReader1 = Program.ExecSqlDataReader(strlenh1);
+
+            if (myReader1 == null) return;
+
+            while (myReader1.Read())
+            {
+                cbMavt.Items.Add(myReader1.GetString(0));
+            }
+
+            myReader1.Close();
             cbMavt.Enabled = txtSoluong.Enabled = txtDongia.Enabled=btnOkctpx.Enabled = true;
             Listctpx.Items[0].Visible = false;
             Listctpx.Items[2].Visible = false;
             Listctpx.Items[1].Visible = true;
-            txtMavt.Text = cbMavt.Text;
-            
+            bdsPhieuxuat.Enabled = false;      
         }
 
         private void cbMavt_SelectedIndexChanged(object sender, EventArgs e)
@@ -313,6 +329,7 @@ namespace DXApplication2
                                 txtMavt.Text + "','" +                                                              
                                 temp + "'";
                     myReader1 = Program.ExecSqlDataReader(lenh);
+                    bdsPhieuxuat.Enabled =  true;
                 }
                
             }
@@ -335,6 +352,7 @@ namespace DXApplication2
             Listctpx.Items[0].Visible = true;
             Listctpx.Items[1].Visible = true;
             Listctpx.Items[2].Visible = true;
+            bdsPhieuxuat.Enabled = true;
         }
 
         private void hủyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -347,11 +365,14 @@ namespace DXApplication2
             Listctpx.Items[0].Visible = true;
             Listctpx.Items[1].Visible = false;
             Listctpx.Items[2].Visible = true;
+            bdsPhieuxuat.Enabled = true;
         }
 
         private void bdsPhieuxuat_Click(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }

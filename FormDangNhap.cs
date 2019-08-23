@@ -45,7 +45,6 @@ namespace DXApplication2
             else
             {
                 Program.servername = cbCoSo.SelectedValue.ToString();
-
                 Program.mlogin = txtLogin.Text;
                 Program.password = txtPass.Text;
 

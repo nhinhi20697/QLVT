@@ -78,8 +78,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.gbCtddh = new System.Windows.Forms.GroupBox();
             this.cbMavt = new System.Windows.Forms.ComboBox();
-            this.sp_InDanhSachMaVatTuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inDanhSachMaVatTu = new DXApplication2.InDanhSachMaVatTu();
             this.btnOkctddh = new System.Windows.Forms.Button();
             this.txtDonGia = new DevExpress.XtraEditors.SpinEdit();
             this.txtSoluong = new DevExpress.XtraEditors.SpinEdit();
@@ -91,6 +89,8 @@
             this.txtNhacungcap = new DevExpress.XtraEditors.TextEdit();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.txtMaddh = new DevExpress.XtraEditors.TextEdit();
+            this.sp_InDanhSachMaVatTuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inDanhSachMaVatTu = new DXApplication2.InDanhSachMaVatTu();
             this.sp_InDanhSachNhanVienDangLamViecBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVTDataSet = new DXApplication2.QLVTDataSet();
             this.datHangTableAdapter = new DXApplication2.DSTableAdapters.DatHangTableAdapter();
@@ -127,8 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.gbCtddh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inDanhSachMaVatTu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoluong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMavt.Properties)).BeginInit();
@@ -139,6 +137,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaddh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inDanhSachMaVatTu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).BeginInit();
             this.SuspendLayout();
@@ -398,7 +398,7 @@
             // 
             this.đặtHàngToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.online_store;
             this.đặtHàngToolStripMenuItem.Name = "đặtHàngToolStripMenuItem";
-            this.đặtHàngToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.đặtHàngToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.đặtHàngToolStripMenuItem.Text = "Thêm vật tư";
             this.đặtHàngToolStripMenuItem.Click += new System.EventHandler(this.đặtHàngToolStripMenuItem_Click);
             // 
@@ -406,7 +406,7 @@
             // 
             this.btnXoavattu.Image = global::DXApplication2.Properties.Resources.baogia1;
             this.btnXoavattu.Name = "btnXoavattu";
-            this.btnXoavattu.Size = new System.Drawing.Size(152, 22);
+            this.btnXoavattu.Size = new System.Drawing.Size(138, 22);
             this.btnXoavattu.Text = "Xóa vật tư";
             this.btnXoavattu.Click += new System.EventHandler(this.chiTiếtĐơnĐặtHàngToolStripMenuItem_Click);
             // 
@@ -414,7 +414,7 @@
             // 
             this.reloadToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.arrow_sign_rotation_icon_reload_symbol_vector_13939029;
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reloadToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.reloadToolStripMenuItem_Click);
             // 
@@ -422,7 +422,7 @@
             // 
             this.hủyToolStripMenuItem.Image = global::DXApplication2.Properties.Resources.back;
             this.hủyToolStripMenuItem.Name = "hủyToolStripMenuItem";
-            this.hủyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hủyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.hủyToolStripMenuItem.Text = "Hủy";
             this.hủyToolStripMenuItem.Click += new System.EventHandler(this.hủyToolStripMenuItem_Click);
             // 
@@ -580,8 +580,6 @@
             // 
             // cbMavt
             // 
-            this.cbMavt.DataSource = this.sp_InDanhSachMaVatTuBindingSource;
-            this.cbMavt.DisplayMember = "MAVT";
             this.cbMavt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMavt.Enabled = false;
             this.cbMavt.FormattingEnabled = true;
@@ -591,16 +589,6 @@
             this.cbMavt.TabIndex = 10;
             this.cbMavt.SelectedIndexChanged += new System.EventHandler(this.cbMavt_SelectedIndexChanged);
             this.cbMavt.SelectedValueChanged += new System.EventHandler(this.cbMavt_SelectedValueChanged);
-            // 
-            // sp_InDanhSachMaVatTuBindingSource
-            // 
-            this.sp_InDanhSachMaVatTuBindingSource.DataMember = "sp_InDanhSachMaVatTu";
-            this.sp_InDanhSachMaVatTuBindingSource.DataSource = this.inDanhSachMaVatTu;
-            // 
-            // inDanhSachMaVatTu
-            // 
-            this.inDanhSachMaVatTu.DataSetName = "InDanhSachMaVatTu";
-            this.inDanhSachMaVatTu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnOkctddh
             // 
@@ -630,6 +618,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDonGia.Size = new System.Drawing.Size(237, 20);
             this.txtDonGia.TabIndex = 7;
+            this.txtDonGia.EditValueChanged += new System.EventHandler(this.txtDonGia_EditValueChanged);
             // 
             // txtSoluong
             // 
@@ -752,6 +741,16 @@
             this.txtMaddh.Size = new System.Drawing.Size(157, 20);
             this.txtMaddh.TabIndex = 1;
             // 
+            // sp_InDanhSachMaVatTuBindingSource
+            // 
+            this.sp_InDanhSachMaVatTuBindingSource.DataMember = "sp_InDanhSachMaVatTu";
+            this.sp_InDanhSachMaVatTuBindingSource.DataSource = this.inDanhSachMaVatTu;
+            // 
+            // inDanhSachMaVatTu
+            // 
+            this.inDanhSachMaVatTu.DataSetName = "InDanhSachMaVatTu";
+            this.inDanhSachMaVatTu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // sp_InDanhSachNhanVienDangLamViecBindingSource
             // 
             this.sp_InDanhSachNhanVienDangLamViecBindingSource.DataMember = "sp_InDanhSachNhanVienDangLamViec";
@@ -847,8 +846,6 @@
             this.panel3.ResumeLayout(false);
             this.gbCtddh.ResumeLayout(false);
             this.gbCtddh.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inDanhSachMaVatTu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoluong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMavt.Properties)).EndInit();
@@ -860,6 +857,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaddh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachMaVatTuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inDanhSachMaVatTu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_InDanhSachNhanVienDangLamViecBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSet)).EndInit();
             this.ResumeLayout(false);

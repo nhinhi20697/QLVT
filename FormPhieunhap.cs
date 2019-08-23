@@ -99,9 +99,9 @@ namespace DXApplication2
             txtManv.Text = Program.username;
             txtManv.Enabled = false;
             txtMaddh.Text = cbMaddh.Text;
-            btnReload.Enabled = btnXoa.Enabled = false;
-            gbCtpn.Enabled = gbPhieunhap.Enabled = btnHuy.Enabled = cbMaddh.Enabled = txtMaphieunhap.Enabled = true;
-            txtNgay.Enabled = phieuNhapGridControl.Enabled = cTPNGridControl.Enabled = false;
+            btnReload.Enabled = btnXoa.Enabled =btnThem.Enabled=btnExit.Enabled= false;
+            gbCtpn.Enabled = gbPhieunhap.Enabled = btnHuy.Enabled = cbMaddh.Enabled = txtMaphieunhap.Enabled =btnOkphieunhap.Enabled= true;
+            txtNgay.Enabled = bdsPhieunhap.Enabled =  false;
             txtMaphieunhap.Focus();
 
             listVattu.Items[0].Visible = false;
@@ -177,7 +177,6 @@ namespace DXApplication2
 
             cTPNBindingSource.AddNew();
             txtMactpn.Text = txtMaphieunhap.Text;
-
             SqlDataReader myReader1;
             String strlenh1 = "EXEC [dbo].[sp_InMaVatTuCTPN]" +
                 "@MAPN = N'" + txtMaphieunhap.Text + "'," +
@@ -193,7 +192,7 @@ namespace DXApplication2
             }
 
             myReader1.Close();
-            phieuNhapGridControl.Enabled = txtMactpn.Enabled = txtMavt.Enabled = txtDongia.Enabled = false;
+            bdsPhieunhap.Enabled = txtMactpn.Enabled = txtMavt.Enabled = txtDongia.Enabled = false;
             btnThem.Enabled = btnXoa.Enabled = btnHuy.Enabled = btnReload.Enabled = btnExit.Enabled = false;
             txtSoluong.Enabled = btnOkctpn.Enabled = true;
 
@@ -259,12 +258,14 @@ namespace DXApplication2
             {
                 phieuNhapBindingSource.EndEdit();
                 phieuNhapBindingSource.CancelEdit();
-                btnReload.Enabled = btnXoa.Enabled = true;
+                btnReload.Enabled = btnXoa.Enabled = btnThem.Enabled = btnExit.Enabled = bdsPhieunhap.Enabled = true;
                 phieuNhapTableAdapter.Update(dS.PhieuNhap);
                 phieuNhapTableAdapter.Fill(dS.PhieuNhap);
-                btnReload.Enabled = btnXoa.Enabled = true;
                 txtMaphieunhap.Enabled = cbMaddh.Enabled = false;
-                btnOkphieunhap.Enabled = false;
+                btnOkphieunhap.Enabled =btnHuy.Enabled= false;
+                listVattu.Items[0].Visible = true;
+                listVattu.Items[1].Visible = true;
+                listVattu.Items[2].Visible = false;
            
             }
         }
@@ -338,17 +339,14 @@ namespace DXApplication2
                 if (myReader == null) return;
                 myReader.Read();
                 myReader.Close();
-
                 cTPNBindingSource.EndEdit();
-
                 cTPNTableAdapter.Update(dS.CTPN);
                 cTPNTableAdapter.Fill(dS.CTPN);
-
                 listVattu.Items[0].Visible = true;
                 listVattu.Items[1].Visible = true;
-
+                listVattu.Items[2].Visible = false;
                 btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = true;
-                phieuNhapGridControl.Enabled = cTPNGridControl.Enabled = true;
+                bdsPhieunhap.Enabled = bdsCtpn.Enabled = true;
                 gbCtpn.Enabled = false;
            }
         }
@@ -358,10 +356,11 @@ namespace DXApplication2
             cTPNBindingSource.CancelEdit();
             this.cTPNTableAdapter.Fill(this.dS.CTPN);
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = true;
-            phieuNhapGridControl.Enabled = cTPNGridControl.Enabled = true;
+            bdsPhieunhap.Enabled = bdsCtpn.Enabled = true;
             gbCtpn.Enabled = false;
             listVattu.Items[0].Visible = true;
             listVattu.Items[1].Visible = true;
+            listVattu.Items[2].Visible = false;
         }
 
         private void btnReloadvt_Click(object sender, EventArgs e)
@@ -377,10 +376,15 @@ namespace DXApplication2
             phieuNhapTableAdapter.Fill(dS.PhieuNhap);
             phieuNhapTableAdapter.Update(dS.PhieuNhap);
             gbPhieunhap.Enabled = btnHuy.Enabled = false;
-            phieuNhapGridControl.Enabled = cTPNGridControl.Enabled = btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = true;
+            bdsPhieunhap.Enabled = btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled =btnExit.Enabled= true;
             listVattu.Items[0].Visible = true;
             listVattu.Items[1].Visible = true;
-            listVattu.Items[2].Visible = true;
+            listVattu.Items[2].Visible = false;
+        }
+
+        private void txtDongia_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

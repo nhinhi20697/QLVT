@@ -157,6 +157,7 @@ namespace DXApplication2
                     Listthem.Items[2].Visible = true;
                     Listthem.Items[3].Visible = false;
                     btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnExit.Enabled = true;
+                    bdsDathang.Enabled = bdsCtddh.Enabled = true;
                 }
             }
         }
@@ -176,6 +177,7 @@ namespace DXApplication2
             Listthem.Items[1].Visible = false;
             Listthem.Items[2].Visible = false;
             Listthem.Items[3].Visible = false;
+            bdsDathang.Enabled = false;
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -185,11 +187,24 @@ namespace DXApplication2
 
         private void đặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             cTDDHBindingSource.AddNew();
-            txtMactddh.Enabled = cbMavt.Enabled = txtSoluong.Enabled = txtDonGia.Enabled = btnOkctddh.Enabled = true;
+             txtSoluong.Enabled = txtDonGia.Enabled = btnOkctddh.Enabled = true;
             txtMactddh.Text = txtMaddh.Text;
-            txtMactddh.Enabled = false;
-            txtMavt.Text = cbMavt.Text;
+            SqlDataReader myReader1;
+            String strlenh1 = "EXEC [dbo].[sp_LoadMaVatTuCTDDH]" +
+                "@MADDH = N'" + txtMactddh.Text + "'";
+
+            myReader1 = Program.ExecSqlDataReader(strlenh1);
+
+            if (myReader1 == null) return;         
+            while (myReader1.Read())
+            {
+                cbMavt.Items.Add(myReader1.GetString(0));
+            }
+
+            myReader1.Close();
+            cbMavt.Enabled = true;
             txtSoluong.Focus();
             Listthem.Items[0].Visible = false;
             Listthem.Items[1].Visible = false;
@@ -200,6 +215,9 @@ namespace DXApplication2
             txtSoluong.Properties.MaxValue = 1000000;
             txtDonGia.Properties.MinValue = 1;
             txtDonGia.Properties.MaxValue = 100000000;
+            bdsDathang.Enabled  = false;
+
+            
         }
 
         private void Btnokdh_Click(object sender, EventArgs e)
@@ -248,6 +266,7 @@ namespace DXApplication2
                         Listthem.Items[1].Visible = true;
                         Listthem.Items[2].Visible = true;
                         btnHuy.Enabled = false;
+                        bdsDathang.Enabled = true;
                     }
                 }
             }
@@ -378,6 +397,7 @@ namespace DXApplication2
             Listthem.Items[0].Visible = true;
             Listthem.Items[1].Visible = true;
             Listthem.Items[2].Visible = true;
+            bdsDathang.Enabled = true;
 
         }
 
@@ -393,6 +413,12 @@ namespace DXApplication2
             Listthem.Items[2].Visible = true;
             Listthem.Items[3].Visible = false;
             cbMavt.Enabled = txtDonGia.Enabled = txtSoluong.Enabled = btnOkctddh.Enabled = false;
+            bdsDathang.Enabled = bdsCtddh.Enabled = true;
+        }
+
+        private void txtDonGia_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -56,7 +56,7 @@
             this.v_DS_PHANMANHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLVTDataSetDSPM = new DXApplication2.QLVTDataSetDSPM();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cTPNGridControl = new DevExpress.XtraGrid.GridControl();
+            this.bdsCtpn = new DevExpress.XtraGrid.GridControl();
             this.listVattu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnThemvt = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReloadvt = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +69,7 @@
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.phieuNhapGridControl = new DevExpress.XtraGrid.GridControl();
+            this.bdsPhieunhap = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAY = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -121,13 +121,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSetDSPM)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCtpn)).BeginInit();
             this.listVattu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPhieunhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.gbCtpn.SuspendLayout();
@@ -368,29 +368,29 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.cTPNGridControl);
-            this.panel2.Controls.Add(this.phieuNhapGridControl);
+            this.panel2.Controls.Add(this.bdsCtpn);
+            this.panel2.Controls.Add(this.bdsPhieunhap);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 81);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1126, 240);
             this.panel2.TabIndex = 11;
             // 
-            // cTPNGridControl
+            // bdsCtpn
             // 
-            this.cTPNGridControl.ContextMenuStrip = this.listVattu;
-            this.cTPNGridControl.DataSource = this.cTPNBindingSource;
-            this.cTPNGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bdsCtpn.ContextMenuStrip = this.listVattu;
+            this.bdsCtpn.DataSource = this.cTPNBindingSource;
+            this.bdsCtpn.Dock = System.Windows.Forms.DockStyle.Fill;
             gridLevelNode1.RelationName = "Level1";
-            this.cTPNGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            this.bdsCtpn.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.cTPNGridControl.Location = new System.Drawing.Point(559, 0);
-            this.cTPNGridControl.MainView = this.gridView2;
-            this.cTPNGridControl.MenuManager = this.barManager1;
-            this.cTPNGridControl.Name = "cTPNGridControl";
-            this.cTPNGridControl.Size = new System.Drawing.Size(567, 240);
-            this.cTPNGridControl.TabIndex = 1;
-            this.cTPNGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bdsCtpn.Location = new System.Drawing.Point(559, 0);
+            this.bdsCtpn.MainView = this.gridView2;
+            this.bdsCtpn.MenuManager = this.barManager1;
+            this.bdsCtpn.Name = "bdsCtpn";
+            this.bdsCtpn.Size = new System.Drawing.Size(567, 240);
+            this.bdsCtpn.TabIndex = 1;
+            this.bdsCtpn.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // listVattu
@@ -400,7 +400,7 @@
             this.btnReloadvt,
             this.hủyToolStripMenuItem});
             this.listVattu.Name = "listVattu";
-            this.listVattu.Size = new System.Drawing.Size(215, 92);
+            this.listVattu.Size = new System.Drawing.Size(215, 70);
             // 
             // btnThemvt
             // 
@@ -451,7 +451,7 @@
             this.colMAVT,
             this.colSOLUONG,
             this.colDONGIA});
-            this.gridView2.GridControl = this.cTPNGridControl;
+            this.gridView2.GridControl = this.bdsCtpn;
             this.gridView2.Name = "gridView2";
             // 
             // colMAPN1
@@ -490,17 +490,17 @@
             this.colDONGIA.Visible = true;
             this.colDONGIA.VisibleIndex = 3;
             // 
-            // phieuNhapGridControl
+            // bdsPhieunhap
             // 
-            this.phieuNhapGridControl.DataSource = this.phieuNhapBindingSource;
-            this.phieuNhapGridControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.phieuNhapGridControl.Location = new System.Drawing.Point(0, 0);
-            this.phieuNhapGridControl.MainView = this.gridView1;
-            this.phieuNhapGridControl.MenuManager = this.barManager1;
-            this.phieuNhapGridControl.Name = "phieuNhapGridControl";
-            this.phieuNhapGridControl.Size = new System.Drawing.Size(559, 240);
-            this.phieuNhapGridControl.TabIndex = 0;
-            this.phieuNhapGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bdsPhieunhap.DataSource = this.phieuNhapBindingSource;
+            this.bdsPhieunhap.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bdsPhieunhap.Location = new System.Drawing.Point(0, 0);
+            this.bdsPhieunhap.MainView = this.gridView1;
+            this.bdsPhieunhap.MenuManager = this.barManager1;
+            this.bdsPhieunhap.Name = "bdsPhieunhap";
+            this.bdsPhieunhap.Size = new System.Drawing.Size(559, 240);
+            this.bdsPhieunhap.TabIndex = 0;
+            this.bdsPhieunhap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -510,7 +510,7 @@
             this.colNGAY,
             this.colMasoDDH,
             this.colMANV});
-            this.gridView1.GridControl = this.phieuNhapGridControl;
+            this.gridView1.GridControl = this.bdsPhieunhap;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowDetailButtons = false;
             // 
@@ -642,6 +642,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDongia.Size = new System.Drawing.Size(210, 20);
             this.txtDongia.TabIndex = 7;
+            this.txtDongia.EditValueChanged += new System.EventHandler(this.txtDongia_EditValueChanged);
             // 
             // txtSoluong
             // 
@@ -868,13 +869,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.v_DS_PHANMANHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSetDSPM)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cTPNGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCtpn)).EndInit();
             this.listVattu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cTPNBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phieuNhapBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phieuNhapGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPhieunhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.gbCtpn.ResumeLayout(false);
@@ -921,7 +922,7 @@
         private DS dS;
         private DSTableAdapters.PhieuNhapTableAdapter phieuNhapTableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl phieuNhapGridControl;
+        private DevExpress.XtraGrid.GridControl bdsPhieunhap;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DSTableAdapters.CTPNTableAdapter cTPNTableAdapter;
         private System.Windows.Forms.BindingSource cTPNBindingSource;
@@ -938,7 +939,7 @@
         private DevExpress.XtraEditors.TextEdit txtMaddh;
         private DevExpress.XtraEditors.DateEdit txtNgay;
         private DevExpress.XtraEditors.TextEdit txtMaphieunhap;
-        private DevExpress.XtraGrid.GridControl cTPNGridControl;
+        private DevExpress.XtraGrid.GridControl bdsCtpn;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMAPN1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
